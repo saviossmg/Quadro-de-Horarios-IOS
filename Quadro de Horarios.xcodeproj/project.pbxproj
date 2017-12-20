@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		774775521F58CDF90005A257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774775511F58CDF90005A257 /* AppDelegate.swift */; };
+		774775541F58CDF90005A257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774775531F58CDF90005A257 /* ViewController.swift */; };
+		774775571F58CDF90005A257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774775551F58CDF90005A257 /* Main.storyboard */; };
+		7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774775581F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld */; };
+		7747755C1F58CDF90005A257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7747755B1F58CDF90005A257 /* Assets.xcassets */; };
+		7747755F1F58CDF90005A257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7747755D1F58CDF90005A257 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7747754E1F58CDF90005A257 /* Quadro de Horarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quadro de Horarios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		774775511F58CDF90005A257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		774775531F58CDF90005A257 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		774775561F58CDF90005A257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		774775591F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quadro_de_Horarios.xcdatamodel; sourceTree = "<group>"; };
+		7747755B1F58CDF90005A257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7747755E1F58CDF90005A257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		774775601F58CDF90005A257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7747754B1F58CDF90005A257 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		774775451F58CDF80005A257 = {
+			isa = PBXGroup;
+			children = (
+				774775501F58CDF90005A257 /* Quadro de Horarios */,
+				7747754F1F58CDF90005A257 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7747754F1F58CDF90005A257 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7747754E1F58CDF90005A257 /* Quadro de Horarios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		774775501F58CDF90005A257 /* Quadro de Horarios */ = {
+			isa = PBXGroup;
+			children = (
+				774775511F58CDF90005A257 /* AppDelegate.swift */,
+				774775531F58CDF90005A257 /* ViewController.swift */,
+				774775551F58CDF90005A257 /* Main.storyboard */,
+				7747755B1F58CDF90005A257 /* Assets.xcassets */,
+				7747755D1F58CDF90005A257 /* LaunchScreen.storyboard */,
+				774775601F58CDF90005A257 /* Info.plist */,
+				774775581F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld */,
+			);
+			path = "Quadro de Horarios";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7747754D1F58CDF90005A257 /* Quadro de Horarios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 774775631F58CDF90005A257 /* Build configuration list for PBXNativeTarget "Quadro de Horarios" */;
+			buildPhases = (
+				7747754A1F58CDF90005A257 /* Sources */,
+				7747754B1F58CDF90005A257 /* Frameworks */,
+				7747754C1F58CDF90005A257 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Quadro de Horarios";
+			productName = "Quadro de Horarios";
+			productReference = 7747754E1F58CDF90005A257 /* Quadro de Horarios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		774775461F58CDF80005A257 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = UNITINS;
+				TargetAttributes = {
+					7747754D1F58CDF90005A257 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 774775491F58CDF80005A257 /* Build configuration list for PBXProject "Quadro de Horarios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 774775451F58CDF80005A257;
+			productRefGroup = 7747754F1F58CDF90005A257 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7747754D1F58CDF90005A257 /* Quadro de Horarios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7747754C1F58CDF90005A257 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7747755F1F58CDF90005A257 /* LaunchScreen.storyboard in Resources */,
+				7747755C1F58CDF90005A257 /* Assets.xcassets in Resources */,
+				774775571F58CDF90005A257 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7747754A1F58CDF90005A257 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				774775541F58CDF90005A257 /* ViewController.swift in Sources */,
+				774775521F58CDF90005A257 /* AppDelegate.swift in Sources */,
+				7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		774775551F58CDF90005A257 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				774775561F58CDF90005A257 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7747755D1F58CDF90005A257 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7747755E1F58CDF90005A257 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		774775611F58CDF90005A257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		774775621F58CDF90005A257 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		774775641F58CDF90005A257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Quadro de Horarios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "unitins.Quadro-de-Horarios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		774775651F58CDF90005A257 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Quadro de Horarios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "unitins.Quadro-de-Horarios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		774775491F58CDF80005A257 /* Build configuration list for PBXProject "Quadro de Horarios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774775611F58CDF90005A257 /* Debug */,
+				774775621F58CDF90005A257 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		774775631F58CDF90005A257 /* Build configuration list for PBXNativeTarget "Quadro de Horarios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				774775641F58CDF90005A257 /* Debug */,
+				774775651F58CDF90005A257 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		774775581F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				774775591F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodel */,
+			);
+			currentVersion = 774775591F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodel */;
+			path = Quadro_de_Horarios.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 774775461F58CDF80005A257 /* Project object */;
+}
