@@ -7,23 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77021452206922B100B3C261 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77021451206922B100B3C261 /* HomeVC.swift */; };
+		770214542069269F00B3C261 /* NoticiasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770214532069269F00B3C261 /* NoticiasTVC.swift */; };
+		770214562069286F00B3C261 /* ConsultasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770214552069286F00B3C261 /* ConsultasTVC.swift */; };
+		770214582069370600B3C261 /* AbaTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770214572069370600B3C261 /* AbaTBC.swift */; };
+		7709B2BC207139D300DAAAC4 /* NoticiaM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2BB207139D300DAAAC4 /* NoticiaM.swift */; };
+		7709B2ED2072E1EE00DAAAC4 /* SairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */; };
+		7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */; };
+		7709B2F42074069600DAAAC4 /* HorarioConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */; };
+		7709B2F6207406D400DAAAC4 /* ConsultaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F5207406D400DAAAC4 /* ConsultaDetalhesVC.swift */; };
 		774775521F58CDF90005A257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774775511F58CDF90005A257 /* AppDelegate.swift */; };
-		774775541F58CDF90005A257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774775531F58CDF90005A257 /* ViewController.swift */; };
 		774775571F58CDF90005A257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774775551F58CDF90005A257 /* Main.storyboard */; };
 		7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774775581F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld */; };
 		7747755C1F58CDF90005A257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7747755B1F58CDF90005A257 /* Assets.xcassets */; };
 		7747755F1F58CDF90005A257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7747755D1F58CDF90005A257 /* LaunchScreen.storyboard */; };
+		A77539682076D81F00B7652D /* NoticiaC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77539672076D81F00B7652D /* NoticiaC.swift */; };
+		A7ACDB8620781D6E007D13BD /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACDB8520781D6E007D13BD /* Datas.swift */; };
+		A7CB8EA820743D990049B6E5 /* UnidadeM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB8EA720743D990049B6E5 /* UnidadeM.swift */; };
+		A7CB8EAA20743DD10049B6E5 /* PredioM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB8EA920743DD10049B6E5 /* PredioM.swift */; };
+		A7FCD90620750C4500B039BD /* NoticiaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90520750C4500B039BD /* NoticiaTVC.swift */; };
+		A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77021451206922B100B3C261 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		770214532069269F00B3C261 /* NoticiasTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasTVC.swift; sourceTree = "<group>"; };
+		770214552069286F00B3C261 /* ConsultasTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultasTVC.swift; sourceTree = "<group>"; };
+		770214572069370600B3C261 /* AbaTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbaTBC.swift; sourceTree = "<group>"; };
+		7709B2BB207139D300DAAAC4 /* NoticiaM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaM.swift; sourceTree = "<group>"; };
+		7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SairVC.swift; sourceTree = "<group>"; };
+		7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaDetalhesVC.swift; sourceTree = "<group>"; };
+		7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioConsultaVC.swift; sourceTree = "<group>"; };
+		7709B2F5207406D400DAAAC4 /* ConsultaDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultaDetalhesVC.swift; sourceTree = "<group>"; };
 		7747754E1F58CDF90005A257 /* Quadro de Horarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quadro de Horarios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		774775511F58CDF90005A257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		774775531F58CDF90005A257 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		774775561F58CDF90005A257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		774775591F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quadro_de_Horarios.xcdatamodel; sourceTree = "<group>"; };
 		7747755B1F58CDF90005A257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7747755E1F58CDF90005A257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		774775601F58CDF90005A257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A77539672076D81F00B7652D /* NoticiaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaC.swift; sourceTree = "<group>"; };
+		A7ACDB8520781D6E007D13BD /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
+		A7CB8EA720743D990049B6E5 /* UnidadeM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadeM.swift; sourceTree = "<group>"; };
+		A7CB8EA920743DD10049B6E5 /* PredioM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredioM.swift; sourceTree = "<group>"; };
+		A7FCD90520750C4500B039BD /* NoticiaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTVC.swift; sourceTree = "<group>"; };
+		A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +84,11 @@
 		774775501F58CDF90005A257 /* Quadro de Horarios */ = {
 			isa = PBXGroup;
 			children = (
+				A7ACDB8420781D5F007D13BD /* Services */,
+				774C348F2052B92B00972451 /* Models */,
+				774C348E2052B8FB00972451 /* Controllers */,
+				774C348D2052B87900972451 /* Views */,
 				774775511F58CDF90005A257 /* AppDelegate.swift */,
-				774775531F58CDF90005A257 /* ViewController.swift */,
 				774775551F58CDF90005A257 /* Main.storyboard */,
 				7747755B1F58CDF90005A257 /* Assets.xcassets */,
 				7747755D1F58CDF90005A257 /* LaunchScreen.storyboard */,
@@ -65,6 +96,57 @@
 				774775581F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld */,
 			);
 			path = "Quadro de Horarios";
+			sourceTree = "<group>";
+		};
+		774C348D2052B87900972451 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7FCD90420750BDF00B039BD /* Celulas */,
+				77021451206922B100B3C261 /* HomeVC.swift */,
+				770214532069269F00B3C261 /* NoticiasTVC.swift */,
+				770214552069286F00B3C261 /* ConsultasTVC.swift */,
+				770214572069370600B3C261 /* AbaTBC.swift */,
+				7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */,
+				7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */,
+				7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */,
+				7709B2F5207406D400DAAAC4 /* ConsultaDetalhesVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		774C348E2052B8FB00972451 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A77539672076D81F00B7652D /* NoticiaC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		774C348F2052B92B00972451 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7709B2BB207139D300DAAAC4 /* NoticiaM.swift */,
+				A7CB8EA720743D990049B6E5 /* UnidadeM.swift */,
+				A7CB8EA920743DD10049B6E5 /* PredioM.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A7ACDB8420781D5F007D13BD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A7ACDB8520781D6E007D13BD /* Datas.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A7FCD90420750BDF00B039BD /* Celulas */ = {
+			isa = PBXGroup;
+			children = (
+				A7FCD90520750C4500B039BD /* NoticiaTVC.swift */,
+				A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */,
+			);
+			path = Celulas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,11 +176,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = UNITINS;
 				TargetAttributes = {
 					7747754D1F58CDF90005A257 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -139,9 +222,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				774775541F58CDF90005A257 /* ViewController.swift in Sources */,
+				A7ACDB8620781D6E007D13BD /* Datas.swift in Sources */,
+				A7CB8EA820743D990049B6E5 /* UnidadeM.swift in Sources */,
+				A7FCD90620750C4500B039BD /* NoticiaTVC.swift in Sources */,
+				77021452206922B100B3C261 /* HomeVC.swift in Sources */,
+				A77539682076D81F00B7652D /* NoticiaC.swift in Sources */,
+				770214562069286F00B3C261 /* ConsultasTVC.swift in Sources */,
+				770214582069370600B3C261 /* AbaTBC.swift in Sources */,
+				A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */,
+				770214542069269F00B3C261 /* NoticiasTVC.swift in Sources */,
 				774775521F58CDF90005A257 /* AppDelegate.swift in Sources */,
+				7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */,
+				7709B2F6207406D400DAAAC4 /* ConsultaDetalhesVC.swift in Sources */,
+				7709B2BC207139D300DAAAC4 /* NoticiaM.swift in Sources */,
+				A7CB8EAA20743DD10049B6E5 /* PredioM.swift in Sources */,
 				7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */,
+				7709B2ED2072E1EE00DAAAC4 /* SairVC.swift in Sources */,
+				7709B2F42074069600DAAAC4 /* HorarioConsultaVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +274,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -185,7 +284,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -228,7 +331,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -236,7 +341,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -266,10 +375,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Quadro de Horarios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "unitins.Quadro-de-Horarios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quadro de Horarios/Models/Quadro de Horarios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -278,10 +390,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Quadro de Horarios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "unitins.Quadro-de-Horarios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quadro de Horarios/Models/Quadro de Horarios-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -305,6 +419,7 @@
 				774775651F58CDF90005A257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

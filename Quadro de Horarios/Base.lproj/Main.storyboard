@@ -1,26 +1,372 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p98-jZ-lN9">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Noticias-->
+        <scene sceneID="edl-nz-dU0">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <navigationController id="BBo-yO-icY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Noticias" image="news" id="uyB-tD-3Pq"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YPd-MX-ytB">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MNu-kx-VJZ" kind="relationship" relationship="rootViewController" id="BP5-hj-YMr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlw-Sa-lk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2799" y="-1525"/>
+        </scene>
+        <!--Novas Noticias-->
+        <scene sceneID="g9J-11-GkY">
+            <objects>
+                <tableViewController id="MNu-kx-VJZ" customClass="NoticiasTVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z8P-pE-FHX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noticiacel" rowHeight="176" id="Psn-ZO-TFh" customClass="NoticiaTVC" customModule="Quadro_de_Horarios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="176"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Psn-ZO-TFh" id="qzo-1g-tw3">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="175.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mr-fl-tjI">
+                                            <rect key="frame" x="16" y="0.0" width="288" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtitulo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klw-KP-uG4">
+                                            <rect key="frame" x="16" y="65" width="288" height="55"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Publicada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRt-v7-X4L">
+                                            <rect key="frame" x="16" y="125" width="136" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Atualizada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOk-Dg-168">
+                                            <rect key="frame" x="169" y="125" width="135" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Subtitulo" destination="klw-KP-uG4" id="xaO-Xo-q94"/>
+                                    <outlet property="Titulo" destination="7mr-fl-tjI" id="J3y-4y-f1Q"/>
+                                    <outlet property="atualizada" destination="QOk-Dg-168" id="Fuj-gv-bmj"/>
+                                    <outlet property="publicada" destination="aRt-v7-X4L" id="nfm-nf-joT"/>
+                                    <outlet property="subtitulo" destination="klw-KP-uG4" id="t2D-rG-FdM"/>
+                                    <outlet property="titulo" destination="7mr-fl-tjI" id="hhc-h2-ihW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MNu-kx-VJZ" id="r8K-W1-xP6"/>
+                            <outlet property="delegate" destination="MNu-kx-VJZ" id="Xxe-Hm-dAU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Novas Noticias" id="Gum-0B-8Qj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JeB-jD-Avc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1920" y="-1526.25"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jsR-Fn-EoI">
+            <objects>
+                <viewController id="EOS-KV-7Ej" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0k-0w-gPq"/>
+                        <viewControllerLayoutGuide type="bottom" id="3IZ-gT-4p8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MhA-JV-HGk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZg-RT-fd4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1133" y="-1525"/>
+        </scene>
+        <!--Consultas-->
+        <scene sceneID="NVW-iX-MJq">
+            <objects>
+                <navigationController id="ehq-fo-Gr3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Consultas" image="consulta" id="2Ri-7i-yhV"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rqL-wZ-gms">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hxZ-36-4GC" kind="relationship" relationship="rootViewController" id="FWP-Kt-KgD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvC-U4-vEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2799" y="-735"/>
+        </scene>
+        <!--Consultas e Alocacoes-->
+        <scene sceneID="bv8-99-6gr">
+            <objects>
+                <tableViewController id="hxZ-36-4GC" customClass="ConsultasTVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LUY-RN-MzF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alocacaocel" rowHeight="97" id="8RK-L2-Fqo" customClass="AlocacaoTVC" customModule="Quadro_de_Horarios" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8RK-L2-Fqo" id="10f-aU-WXp">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="96.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terca-Feira" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19h-iO-0B4">
+                                            <rect key="frame" x="14" y="10" width="90" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laboratorio de Hardware - Bloco B" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nc4-xC-gju">
+                                            <rect key="frame" x="112" y="10" width="192" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Curso - Periodo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXj-sC-sm8">
+                                            <rect key="frame" x="16" y="37" width="288" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISCIPLINA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-X7-Q6Z">
+                                            <rect key="frame" x="16" y="62" width="288" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hxZ-36-4GC" id="6qE-6f-k7T"/>
+                            <outlet property="delegate" destination="hxZ-36-4GC" id="gdd-Z8-dCZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Consultas e Alocacoes" id="IPc-VI-Ahf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owz-8P-faQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1918.125" y="-735"/>
+        </scene>
+        <!--Inicio-->
+        <scene sceneID="4bZ-OG-b1X">
+            <objects>
+                <viewController id="IB3-Tv-WBi" customClass="HomeVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nPV-nT-fYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YU7-Ts-ZeF">
+                                <rect key="frame" x="0.0" y="20" width="320" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Bem-vindo ao Guia Acadêmico da UNITINS.
+
+Para iniciar uma consulta de horários, vá ao menu de consultas. Se for o primeiro uso do aplicativo, ele irá sincronizar algumas informações automaticamente. Após a sincronia, clique no botão com o sinal positivo e selecione a lupa para abrir a tela de Pesquisas e informe os parâmetros desejados, com o semestre sendo obrigatório.
+
+Os outros dois botões servem para recarregar a lista de alocações (Meio Círculo Grande) e para sincronizar as informações já carregadas (Dois Meio Círculos Pequenos).
+
+A cada pesquisa, a lista ficará alterada conforme a última pesquisa realizada. É possível conseguir todos os horários de cursos de um campus, curso ou semestre em específico.
+
+Todos os resultados são armazenados localmente e podem ser editados.
+Após a primeira pesquisa, basta selecionar a alocação para ver os detalhes da mesma clicando em cima de sua célula.
+
+Também é possível ver as notícias da UNITINS, a partir no menu de Notícias. Essas notícias são carregadas sempre que o Aplicativo for aberto. Para ler uma notícia, selecione-a clicando em sua célula.
+
+O recurso de localização está disponível na aba localizar, sendo possível acesso rápido ao campus selecionado através do Google Maps e utilizar o recurso de rotas do mesmo.
+
+Bom uso!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Es2-a4-zWd"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Inicio" image="home" id="gL0-Ho-AOw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4N-uE-dbC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4689" y="84"/>
+        </scene>
+        <!--Sobre-->
+        <scene sceneID="OgO-vB-KfG">
+            <objects>
+                <viewController id="2XV-i5-2Io" customClass="SobreVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ng-1x-hv3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="E83-Nw-mhI">
+                                <rect key="frame" x="0.0" y="20" width="320" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Este aplicativo tem como objetivo disponibilizar aos estudantes da Universidade Estadual do Tocantins (UNITINS) os horários e dias de aula das respectivas matérias ingressadas no semestre, acesso as notícias da instituição e acesso rápido pelo Google Maps ao endereço do campus em que o aluno está ingressado.
+
+
+Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Universidade Estadual do Tocantins (UNITINS), sob a orientação do Prof. Me. Silvano Maneck Malfatti.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Q80-o1-H8E"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sobre" image="info" id="20I-2d-aN2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTH-Gg-MMX" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3879" y="84"/>
+        </scene>
+        <!--Sair-->
+        <scene sceneID="VWm-UH-T3z">
+            <objects>
+                <viewController id="dYs-VU-8YD" customClass="SairVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rUY-Su-sfS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tmd-hl-nGC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fZ7-73-F8H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="san-Gf-FfK">
+                                <rect key="frame" x="110" y="225" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Sair">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sair" image="sair" id="Vc4-0x-3vb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0N-Tf-a3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2964" y="84"/>
+        </scene>
+        <!--Localizar-->
+        <scene sceneID="0pE-NU-FZd">
+            <objects>
+                <viewController id="2Np-An-4kW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rzj-3z-paF"/>
+                        <viewControllerLayoutGuide type="bottom" id="2hR-06-XRx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tru-kJ-Lt2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFs-1I-6zY">
+                                <rect key="frame" x="16" y="20" width="288" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jfc-rX-4yV">
+                                <rect key="frame" x="16" y="78" width="288" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-a6-jfo">
+                                <rect key="frame" x="16" y="378" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="zoomind"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRW-Rb-PcN">
+                                <rect key="frame" x="264" y="378" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="zoomoutd"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYW-3I-XnO">
+                                <rect key="frame" x="96" y="382" width="128" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Gerar Rota">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Localizar" image="localizar" id="J2O-eE-aoo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nR0-k9-GYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3879.375" y="-1525"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kew-ei-NQ6">
+            <objects>
+                <tabBarController id="p98-jZ-lN9" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="MVR-o7-K99">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="IB3-Tv-WBi" kind="relationship" relationship="viewControllers" id="931-5o-PQW"/>
+                        <segue destination="BBo-yO-icY" kind="relationship" relationship="viewControllers" id="vd1-5Y-gqb"/>
+                        <segue destination="ehq-fo-Gr3" kind="relationship" relationship="viewControllers" id="KoV-bm-IlV"/>
+                        <segue destination="2Np-An-4kW" kind="relationship" relationship="viewControllers" id="MJ2-Mf-b9M"/>
+                        <segue destination="2XV-i5-2Io" kind="relationship" relationship="viewControllers" id="k9z-qF-Bcm"/>
+                        <segue destination="dYs-VU-8YD" kind="relationship" relationship="viewControllers" id="oCd-Ry-Qmy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LqE-mQ-Fre" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3878" y="-735"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="consulta" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="info" width="30" height="30"/>
+        <image name="localizar" width="30" height="30"/>
+        <image name="news" width="30" height="30"/>
+        <image name="sair" width="30" height="30"/>
+        <image name="zoomind" width="64" height="64"/>
+        <image name="zoomoutd" width="64" height="64"/>
+    </resources>
 </document>
