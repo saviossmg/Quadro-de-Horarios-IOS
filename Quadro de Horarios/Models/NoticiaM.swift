@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NoticiaM: NSObject {
+class NoticiaM {
     
     var id: Int!
     var autor:String!

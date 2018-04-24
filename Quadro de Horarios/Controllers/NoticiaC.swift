@@ -34,16 +34,24 @@ class NoticiaC{
                 {
                     let json = json as! NSDictionary
                     let noticia = NoticiaM()
-                    noticia.id = json["id"] as! Int
-                    noticia.autor = json["autor"] as! String
+                    //insere
+                    noticia.autor = "Autor(a): \(json["autor"] as! String)"
                     noticia.chapeu = json["chapeu"] as! String
-                    noticia.dataAtualizacao = json["dataAtualizacao"] as! String
-                    noticia.dataCriacao = json["dataCriacao"] as! String
-                    noticia.dataPublicacao = json["dataPublicacao"] as! String
-                    noticia.palavrasChave = json["palavrasChave"] as! String
-                    noticia.subTitulo = json["subTitulo"] as! String
+                    
+                    if(json["dataAtualizacao"] is NSArray){ noticia.dataAtualizacao = "-" }
+                    else{ noticia.dataAtualizacao = "Atualizada em \(formataData(param: json["dataAtualizacao"] as! String))" }
+                    
+                    noticia.dataCriacao = "Criada em \(formataData(param: json["dataCriacao"] as! String))"
+                    noticia.dataPublicacao = "Publicada em \(formataData(param: json["dataPublicacao"] as! String))"
+                    if(json["palavrasChave"] is NSArray){ noticia.palavrasChave = "-" }
+                    else{ noticia.palavrasChave = json["palavrasChave"] as! String }
+                    
+                    if(json["subTitulo"] is NSArray){  noticia.subTitulo = "-" }
+                    else { noticia.subTitulo = json["subTitulo"] as! String }
+                    
                     noticia.texto = json["texto"] as! String
                     noticia.titulo = json["titulo"] as! String
+                    
                     noticias.append(noticia)
                 }
             }
@@ -52,7 +60,24 @@ class NoticiaC{
         {}
         
         return noticias
-        
+    
     }
+    
+    //funcao para formatar a data
+    func formataData(param: String)->String{
+        
+        let arrayParam = param.components(separatedBy: "T")
+        let paramDia = arrayParam[0].components(separatedBy: "-")
+        let paramHora = arrayParam[1].components(separatedBy: ":")
+        let paramSeg = paramHora[2].components(separatedBy: ".")
+        
+        let data = "\(paramDia[2])/\(paramDia[1])/\(paramDia[0])"
+        let hora = "\(paramHora[0]):\(paramHora[1]):\(paramSeg[0])"
+        
+        let retorno = "\(data) às \(hora)"
+        
+        return retorno
+    }
+    
     
 }

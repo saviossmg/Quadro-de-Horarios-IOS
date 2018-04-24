@@ -1,12 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D102" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1212" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AlocacaoSala" representedClassName="AlocacaoSala" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idcurso" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idoferta" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idsemestre" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="oferta" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Oferta" syncable="YES"/>
+        <relationship name="sala" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sala" syncable="YES"/>
+        <relationship name="semestre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SemestreLetivo" syncable="YES"/>
+    </entity>
+    <entity name="Chave" representedClassName="Chave" syncable="YES" codeGenerationType="class">
+        <attribute name="chave" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Curso" representedClassName="Curso" syncable="YES" codeGenerationType="class">
+        <attribute name="codcurso" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idunidade" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="unidade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unidade" syncable="YES"/>
+    </entity>
+    <entity name="Oferta" representedClassName="Oferta" syncable="YES" codeGenerationType="class">
+        <attribute name="descricaoperiodoletivo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="diasemana" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disciplina" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="horafinala" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="horafinalb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="horainiciala" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="horainicialb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idcurso" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="intervalofim" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intervaloinicio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nometurma" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="periodo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="professor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipohorario" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="turno" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="curso" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Curso" syncable="YES"/>
+    </entity>
     <entity name="Predio" representedClassName="Predio" syncable="YES" codeGenerationType="class">
         <attribute name="ativo" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="idunidade" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pisos" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="unidade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unidade" syncable="YES"/>
+        <relationship name="unidade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unidade" inverseName="predio" inverseEntity="Unidade" syncable="YES"/>
+    </entity>
+    <entity name="Sala" representedClassName="Sala" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idpredio" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pios" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="predio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Predio" syncable="YES"/>
+    </entity>
+    <entity name="Semestre" representedClassName="Semestre" syncable="YES" codeGenerationType="class">
+        <attribute name="datafim" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="datainicio" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="SemestreLetivo" representedClassName="SemestreLetivo" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idcurso" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idsemestre" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="curso" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Curso" syncable="YES"/>
+        <relationship name="semestre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Semestre" syncable="YES"/>
     </entity>
     <entity name="Unidade" representedClassName="Unidade" syncable="YES" codeGenerationType="class">
         <attribute name="cep" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -15,9 +75,17 @@
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="predio" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Predio" inverseName="unidade" inverseEntity="Predio" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Unidade" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Predio" positionX="-54" positionY="36" width="128" height="135"/>
+        <element name="AlocacaoSala" positionX="0" positionY="180" width="128" height="150"/>
+        <element name="Curso" positionX="-27" positionY="108" width="128" height="120"/>
+        <element name="Chave" positionX="-731" positionY="303" width="128" height="73"/>
+        <element name="Oferta" positionX="-252" positionY="321" width="128" height="300"/>
+        <element name="Predio" positionX="-549" positionY="99" width="128" height="135"/>
+        <element name="Sala" positionX="-389" positionY="99" width="128" height="135"/>
+        <element name="Semestre" positionX="-468" positionY="282" width="128" height="105"/>
+        <element name="SemestreLetivo" positionX="-18" positionY="213" width="128" height="120"/>
+        <element name="Unidade" positionX="-729" positionY="99" width="128" height="148"/>
     </elements>
 </model>
