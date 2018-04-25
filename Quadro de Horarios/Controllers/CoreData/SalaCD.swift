@@ -16,6 +16,6 @@ class SalaCD: NSManagedObject
     @NSManaged var piso:Int32
     @NSManaged var predio:PredioCD
     @NSManaged var tipo:String
-    @NSManaged var ativo:boolean_t
+    @NSManaged var ativo:Bool
     @NSManaged var idPredio:Int32
 }

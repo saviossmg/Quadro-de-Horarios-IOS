@@ -10,7 +10,9 @@ import UIKit
 
 class ConsultasTVC: UITableViewController {
 
-    var vrUnidade: [UnidadeMod] = []
+    var vrUnidade: [UnidadeM] = []
+    var vrPredio: [PredioM] = []
+    var vrSala: [SalaM] = []
     var dadosC = DadosC()
     
     override func viewDidLoad() {
@@ -23,6 +25,8 @@ class ConsultasTVC: UITableViewController {
     
     func carregaDados(){
         vrUnidade = dadosC.buscaUnidade()
+        vrPredio = dadosC.buscaPredio()
+        vrSala = dadosC.buscaSalas()
     }
 
     // MARK: - Table view data source

@@ -9,12 +9,10 @@
 import Foundation
 
 class PredioM{
-
 	var id:Int32!
     var nome:String!
     var idunidade:Int32!
     var pisos:Int32!
-    var ativo:boolean_t!
-    var unidade:UnidadeM! 
-    
+    var ativo:Bool!
+    var unidade:UnidadeM!     
 }

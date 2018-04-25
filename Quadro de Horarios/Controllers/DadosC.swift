@@ -11,7 +11,7 @@ import Foundation
 class DadosC
 {
     //listas com os dados para salvar
-    var unidades = [UnidadeMod]()
+    var unidades = [UnidadeM]()
     var predios = [PredioM]()
     var salas = [SalaM]()
     var semestres = [SemestreM]()
@@ -33,7 +33,8 @@ class DadosC
         "https://alocacaosalas.unitins.br/attAlocacao.php"
     ]
     
-    func buscaUnidade()->[UnidadeMod]
+    //busca as unidades
+    func buscaUnidade()->[UnidadeM]
     {
         let url = URL(string: enderecos[0])!
         // post the data
@@ -48,110 +49,99 @@ class DadosC
             (data, response, error) in
             if error == nil, let userObject = (try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any] ) {
                 //For getting customer_id try like this
+                self.unidades.removeAll()
                 if let data = userObject!["data"] as? [[String: Any]] {
                     for jsonDict in data {
                         let json = jsonDict as NSDictionary
-                        let unidade = UnidadeMod()
-                        //aqui que aponta o erro
+                        let unidade = UnidadeM()
                         unidade.id = (json["id"] as! Int32)
                         unidade.nome = (json["nome"] as! String)
-                        print(unidade.nome)
-                        
+                        unidade.endereco = (json["endereco"] as! String)
+                        unidade.cep = (json["cep"] as! Int32)
+                        unidade.latitude = (json["latitude"] as! Float)
+                        unidade.longitude = (json["nome"] as! Float)
+                        self.unidades.append(unidade)
                     }
                 }
             }
         }.resume()
-        
+        print("unidades \(self.unidades.count)")
         //retorna no final
         return unidades
     }
     
-    /*
-    func buscaUnidade()->[UnidadeM]
+    //busca os predios
+    func buscaPredio()->[PredioM]
     {
-        do
-        {
-            //Baixa os dados da Web
-            let caminho = URL(string: enderecos[0])
-            let dados = try Data(contentsOf: caminho!)
-            
-            if (dados.count == 0)
-            {
-                return unidades
-            }
-            
-            //Realiza o parsing dos dados
-            let arrayUnidades = try JSONSerialization.jsonObject(with: dados, options: .mutableContainers) as? Array<Any>
-            
-            if let vetorUnidades = arrayUnidades
-            {
-                for json in vetorUnidades
-                {
-                    let json = json as! NSDictionary
-                    let unidade = Unidade()
-                    
-                    //insere no array
-                    print(json)
-                    /*
-                    unidade.id = (json["data"]["autor"] as! String)
-                    noticia.chapeu = json["chapeu"] as! String
-                    
-                    if(json["dataAtualizacao"] is NSArray){ noticia.dataAtualizacao = "-" }
-                    else{ noticia.dataAtualizacao = "Atualizada em \(formataData(param: json["dataAtualizacao"] as! String))" }
-                    
-                    noticia.dataCriacao = "Criada em \(formataData(param: json["dataCriacao"] as! String))"
-                    noticia.dataPublicacao = "Publicada em \(formataData(param: json["dataPublicacao"] as! String))"
-                    if(json["palavrasChave"] is NSArray){ noticia.palavrasChave = "-" }
-                    else{ noticia.palavrasChave = json["palavrasChave"] as! String }
-                    
-                    if(json["subTitulo"] is NSArray){  noticia.subTitulo = "-" }
-                    else { noticia.subTitulo = json["subTitulo"] as! String }
-                    
-                    noticia.texto = json["texto"] as! String
-                    noticia.titulo = json["titulo"] as! String
-                    
-                    noticias.append(noticia)
-                    */
+        let url = URL(string: enderecos[1])!
+        // post the data
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let postData = "hash=\(chave.chave)".data(using: .utf8)
+        request.httpBody = postData
+        // execute the datatask and validate the result
+        let session = URLSession.shared
+        session.dataTask(with: request) {
+            (data, response, error) in
+            if error == nil, let userObject = (try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any] ) {
+                //For getting customer_id try like this
+                self.predios.removeAll()
+                if let data = userObject!["data"] as? [[String: Any]] {
+                    for jsonDict in data {
+                        let json = jsonDict as NSDictionary
+                        let predio = PredioM()
+                        predio.id = (json["id"] as! Int32)
+                        predio.nome = (json["nome"] as! String)
+                        predio.idunidade = (json["idunidade"] as! Int32)
+                        predio.pisos = (json["pisos"] as! Int32)
+                        predio.ativo = (json["ativo"] as! Bool)
+                        predio.unidade = nil
+                        self.predios.append(predio)
+                    }
                 }
             }
-        }
-        catch
-        {}
-        
-        return unidades
-        
+            }.resume()
+        print("predios \(self.predios.count)")
+        //retorna no final
+        return predios
     }
- */
     
-    /*
-    func data_request(_ url:String)
+    //busca os predios
+    func buscaSalas()->[SalaM]
     {
-        let url:NSURL = NSURL(string: url)!
-        let session = URLSession.shared
-        
-        let request = NSMutableURLRequest(url: url as URL)
+        let url = URL(string: enderecos[2])!
+        // post the data
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
-        let paramString = "data=test"
-        request.httpBody = paramString.data(using: String.Encoding.utf8)
-        
-        let task = session.dataTask(with: request as URLRequest) {
-            (
-            data, response, error) in
-            
-            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
-                print("error")
-                return
+        let postData = "hash=\(chave.chave)".data(using: .utf8)
+        request.httpBody = postData
+        // execute the datatask and validate the result
+        let session = URLSession.shared
+        session.dataTask(with: request) {
+            (data, response, error) in
+            if error == nil, let userObject = (try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any] ) {
+                //For getting customer_id try like this
+                self.salas.removeAll()
+                if let data = userObject!["data"] as? [[String: Any]] {
+                    for jsonDict in data {
+                        let json = jsonDict as NSDictionary
+                        let sala = SalaM()
+                        sala.id = (json["id"] as! Int32)
+                        sala.nome = (json["nome"] as! String)
+                        sala.piso = (json["piso"] as! Int32)
+                        sala.predio = nil
+                        sala.idpredio = (json["idpredio"] as! Int32)
+                        sala.tipo = (json["string"] as! String)
+                        sala.ativo = (json["ativo"] as! Bool)
+                        self.salas.append(sala)
+                    }
+                }
             }
-            
-            if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            {
-                print(dataString)
-            }
-        }
+            }.resume()
+        print("salas \(self.salas.count)")
+        //retorna no final
+        return salas
     }
-    */
-    
     
     func salvarBanco(){
         

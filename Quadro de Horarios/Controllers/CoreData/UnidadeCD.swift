@@ -11,12 +11,10 @@ import CoreData
 
 class UnidadeCD: NSManagedObject
 {
-
     @NSManaged var id:Int32
     @NSManaged var nome:String
     @NSManaged var endereco:String
     @NSManaged var cep:Int
     @NSManaged var latitude:Float
-    @NSManaged var longitude:Float  
-    
+    @NSManaged var longitude:Float      
 }

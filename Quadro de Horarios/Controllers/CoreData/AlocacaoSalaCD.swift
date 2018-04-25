@@ -9,9 +9,8 @@
 import Foundation
 import CoreData
 
-class AlocacaoSalaM: NSManagedObject
+class AlocacaoSalaCD: NSManagedObject
 {
-
     @NSManaged var id:Int32
     @NSManaged var semestre:SemestreLetivoCD
     @NSManaged var sala:SalaCD

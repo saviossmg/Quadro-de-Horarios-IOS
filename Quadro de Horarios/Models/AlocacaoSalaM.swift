@@ -11,9 +11,9 @@ import Foundation
 class AlocacaoSalaM
 {
     var id:Int32!
-    var semestre:SemestreLetivoM
-    var sala:SalaM
-    var oferta:OfertaM
+    var semestre:SemestreLetivoM!
+    var sala:SalaM!
+    var oferta:OfertaM!
     var idsala:Int32!
     var idoferta:Int32!
     var idsemestre:Int32!

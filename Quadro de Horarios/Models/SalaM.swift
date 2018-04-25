@@ -9,13 +9,11 @@
 import Foundation
 
 class SalaM {
-
 	var id:Int32!
     var nome:String!
     var piso:Int32!
     var predio:PredioM!
     var tipo:String!
-    var ativo:boolean_t!
-    var idPredio:Int32!
-    
+    var ativo:Bool!
+    var idpredio:Int32!    
 }

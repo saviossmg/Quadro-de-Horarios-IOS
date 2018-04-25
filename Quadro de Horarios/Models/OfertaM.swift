@@ -11,7 +11,7 @@ import Foundation
 class OfertaM
 {
     var id:Int32!
-    var nometurma:String!!
+    var nometurma:String!
     var curso:CursoM!
     var diasemana:String!
     var periodo:Int32!

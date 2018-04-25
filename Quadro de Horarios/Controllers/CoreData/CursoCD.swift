@@ -15,6 +15,5 @@ class CursoCD: NSManagedObject
     @NSManaged var nome:String
     @NSManaged var unidade:UnidadeCD
     @NSManaged var codCurso:String
-    @NSManaged var idunidade:Int32
-    
+    @NSManaged var idunidade:Int32    
 }

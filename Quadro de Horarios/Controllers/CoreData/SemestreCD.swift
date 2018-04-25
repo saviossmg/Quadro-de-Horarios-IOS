@@ -11,10 +11,8 @@ import CoreData
 
 class SemestreCD: NSManagedObject
 {
-
     @NSManaged var id:Int32
     @NSManaged var descricao:String
     @NSManaged var dataInicio:Date
-    @NSManaged var dataFim:Date    
-
+    @NSManaged var dataFim:Date
 }
