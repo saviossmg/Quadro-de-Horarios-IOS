@@ -11,7 +11,7 @@ import Foundation
 class DadosC
 {
     //listas com os dados para salvar
-    var unidades = [UnidadeM]()
+    var unidades = [UnidadeCD]()
     var predios = [PredioM]()
     var salas = [SalaM]()
     var semestres = [SemestreM]()
@@ -34,7 +34,7 @@ class DadosC
     ]
     
     //busca as unidades
-    func buscaUnidade()->[UnidadeM]
+    func buscaUnidade()->[UnidadeCD]
     {
         let url = URL(string: enderecos[0])!
         // post the data
@@ -53,13 +53,20 @@ class DadosC
                 if let data = userObject!["data"] as? [[String: Any]] {
                     for jsonDict in data {
                         let json = jsonDict as NSDictionary
-                        let unidade = UnidadeM()
-                        unidade.id = (json["id"] as! Int32)
+                        let unidade = UnidadeCD()
+                        if let numero = json["id"]
+                        {
+                            print("AGORA VAI \(numero)")
+                            let int32 = numero as! Int
+                            unidade.id = Int32(int32)
+                        }
+                        
+                        
                         unidade.nome = (json["nome"] as! String)
                         unidade.endereco = (json["endereco"] as! String)
                         unidade.cep = (json["cep"] as! Int32)
                         unidade.latitude = (json["latitude"] as! Float)
-                        unidade.longitude = (json["nome"] as! Float)
+                        unidade.longitude = (json["longitude"] as! Float)
                         self.unidades.append(unidade)
                     }
                 }
@@ -131,7 +138,7 @@ class DadosC
                         sala.piso = (json["piso"] as! Int32)
                         sala.predio = nil
                         sala.idpredio = (json["idpredio"] as! Int32)
-                        sala.tipo = (json["string"] as! String)
+                        sala.tipo = (json["tipo"] as! String)
                         sala.ativo = (json["ativo"] as! Bool)
                         self.salas.append(sala)
                     }

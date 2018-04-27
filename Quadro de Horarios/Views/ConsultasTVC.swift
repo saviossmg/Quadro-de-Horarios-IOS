@@ -10,7 +10,7 @@ import UIKit
 
 class ConsultasTVC: UITableViewController {
 
-    var vrUnidade: [UnidadeM] = []
+    var vrUnidade: [UnidadeCD] = []
     var vrPredio: [PredioM] = []
     var vrSala: [SalaM] = []
     var dadosC = DadosC()
