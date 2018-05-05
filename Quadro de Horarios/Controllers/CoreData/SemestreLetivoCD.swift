@@ -12,8 +12,7 @@ import CoreData
 class SemestreLetivoCD: NSManagedObject
 {
     @NSManaged var id:Int32
-    @NSManaged var semestre:SemestreCD
-    @NSManaged var curso:CursoCD
-    @NSManaged var idsemestre:Int32
-    @NSManaged var idcurso:Int32
+    @NSManaged var semestre:Semestre
+    @NSManaged var curso:Curso
+    
 }

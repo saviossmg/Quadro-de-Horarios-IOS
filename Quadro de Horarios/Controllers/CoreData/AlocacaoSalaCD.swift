@@ -12,11 +12,8 @@ import CoreData
 class AlocacaoSalaCD: NSManagedObject
 {
     @NSManaged var id:Int32
-    @NSManaged var semestre:SemestreLetivoCD
-    @NSManaged var sala:SalaCD
-    @NSManaged var oferta:OfertaCD
-    @NSManaged var idsala:Int32
-    @NSManaged var idoferta:Int32
-    @NSManaged var idsemestre:Int32
+    @NSManaged var semestre:SemestreLetivo
+    @NSManaged var sala:Sala
+    @NSManaged var oferta:Oferta
 	
 }

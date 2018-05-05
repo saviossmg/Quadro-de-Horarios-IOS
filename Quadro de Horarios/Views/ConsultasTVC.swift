@@ -10,24 +10,51 @@ import UIKit
 
 class ConsultasTVC: UITableViewController {
 
-    var vrUnidade: [UnidadeCD] = []
-    var vrPredio: [PredioM] = []
-    var vrSala: [SalaM] = []
-    var dadosC = DadosC()
+    var vrUnidades: [UnidadeM] = []
+    var vrPredios: [PredioM] = []
+    var vrSalas: [SalaM] = []
+    var vrSemestres: [SemestreM] = []
+    var vrSemestreLetivos: [SemestreLetivoM] = []
+    var vrCursos: [CursoM] = []
     
+    //controlador do buscador
+    var dadosC = DadosC()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        carregaDados()
+        //verifica se os dados estão vazios
+        let existe = dadosC.verificaDados()
+        
+        //carrega tudo se não tiver nada
+        if(!existe){
+            print("nao tem dados")
+            dadosC.buscarDados()
+        }
+        else{
+            print("tem dados")
+        }
     }
     
+    /*
     func carregaDados(){
-        vrUnidade = dadosC.buscaUnidade()
-        vrPredio = dadosC.buscaPredio()
-        vrSala = dadosC.buscaSalas()
+        vrUnidades = dadosC.buscaUnidade()££
+        vrPredios = dadosC.buscaPredio()
+        vrSalas = dadosC.buscaSalas()
+        vrSemestres = dadosC.buscaSemestre()
+        vrSemestreLetivos = dadosC.buscaSemestreletivo()
+        vrCursos = dadosC.buscaCurso()
+        print("Unidades: \(self.vrUnidades.count)")
+        print("Predios: \(self.vrPredios.count)")
+        print("Salas: \(self.vrSalas.count)")
+        print("Semestres: \(self.vrSemestres.count)")
+        print("Semestres Letivos: \(self.vrSemestreLetivos.count)")
+        print("Cursos: \(self.vrCursos.count)")
     }
+    */
 
     // MARK: - Table view data source
 

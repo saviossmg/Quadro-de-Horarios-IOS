@@ -13,8 +13,7 @@ class PredioCD: NSManagedObject
 {
     @NSManaged var id:Int32
     @NSManaged var nome:String
-    @NSManaged var idunidade:Int32
     @NSManaged var pisos:Int32
     @NSManaged var ativo:Bool
-    @NSManaged var unidade:UnidadeCD  
+    @NSManaged var unidade: Unidade
 }

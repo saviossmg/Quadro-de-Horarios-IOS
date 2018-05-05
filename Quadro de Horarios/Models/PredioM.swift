@@ -14,5 +14,6 @@ class PredioM{
     var idunidade:Int32!
     var pisos:Int32!
     var ativo:Bool!
-    var unidade:UnidadeM!     
+    var unidade:UnidadeM!    
+    
 }

@@ -13,7 +13,7 @@ class OfertaCD: NSManagedObject
 {
     @NSManaged var id:Int32
     @NSManaged var nometurma:String
-    @NSManaged var curso:CursoCD
+    @NSManaged var curso:Curso
     @NSManaged var diasemana:String
     @NSManaged var periodo:Int32
     @NSManaged var disciplina:String
@@ -27,5 +27,4 @@ class OfertaCD: NSManagedObject
     @NSManaged var professor:String
     @NSManaged var turno:String
     @NSManaged var tipohorario:Int32
-    @NSManaged var idcurso:Int32
 }

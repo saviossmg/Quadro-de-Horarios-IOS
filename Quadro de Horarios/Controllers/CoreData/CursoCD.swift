@@ -13,7 +13,7 @@ class CursoCD: NSManagedObject
 {
     @NSManaged var id:Int32
     @NSManaged var nome:String
-    @NSManaged var unidade:UnidadeCD
+    @NSManaged var unidade:Unidade
     @NSManaged var codCurso:String
-    @NSManaged var idunidade:Int32    
+    
 }

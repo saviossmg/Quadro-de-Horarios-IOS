@@ -10,10 +10,8 @@ import Foundation
 
 class SemestreM
 {
-
     var id:Int32!
     var descricao:String!
     var dataInicio:Date!
-    var dataFim:Date!  
-	
+    var dataFim:Date!  	
 }

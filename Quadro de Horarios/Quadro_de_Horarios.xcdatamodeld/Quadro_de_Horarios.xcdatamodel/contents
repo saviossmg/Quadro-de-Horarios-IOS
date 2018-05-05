@@ -79,13 +79,13 @@
     </entity>
     <elements>
         <element name="AlocacaoSala" positionX="0" positionY="180" width="128" height="150"/>
-        <element name="Curso" positionX="-27" positionY="108" width="128" height="120"/>
         <element name="Chave" positionX="-731" positionY="303" width="128" height="73"/>
+        <element name="Curso" positionX="-27" positionY="108" width="128" height="120"/>
         <element name="Oferta" positionX="-252" positionY="321" width="128" height="300"/>
         <element name="Predio" positionX="-549" positionY="99" width="128" height="135"/>
         <element name="Sala" positionX="-389" positionY="99" width="128" height="135"/>
         <element name="Semestre" positionX="-468" positionY="282" width="128" height="105"/>
         <element name="SemestreLetivo" positionX="-18" positionY="213" width="128" height="120"/>
-        <element name="Unidade" positionX="-729" positionY="99" width="128" height="148"/>
+        <element name="Unidade" positionX="-729" positionY="99" width="128" height="150"/>
     </elements>
 </model>
