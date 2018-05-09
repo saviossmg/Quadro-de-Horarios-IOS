@@ -20,8 +20,7 @@ class NoticiasTVC: UITableViewController {
     var indicadorCarregamento:UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.rowHeight = 170
+        super.viewDidLoad()        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -29,7 +28,6 @@ class NoticiasTVC: UITableViewController {
             carregaNoticia()
             tableView.reloadData()
         }
-        
     }
     
     func carregaNoticia()->Void{
@@ -75,6 +73,10 @@ class NoticiasTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return vrNoticia.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170
     }
     
     //carrega as celulas

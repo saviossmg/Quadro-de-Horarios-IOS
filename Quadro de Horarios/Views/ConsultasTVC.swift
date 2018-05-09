@@ -32,7 +32,7 @@ class ConsultasTVC: UITableViewController {
         //carrega tudo se não tiver nada
         if(!existe){
             print("nao tem dados")
-            dadosC.buscarDados()
+            dadosC.buscarDados(sincronia: false)
         }
         else{
             print("tem dados")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37288E8D20A27EB100192184 /* PredioCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37288E8C20A27EB100192184 /* PredioCD.swift */; };
 		77021452206922B100B3C261 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77021451206922B100B3C261 /* HomeVC.swift */; };
 		770214542069269F00B3C261 /* NoticiasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770214532069269F00B3C261 /* NoticiasTVC.swift */; };
 		770214562069286F00B3C261 /* ConsultasTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770214552069286F00B3C261 /* ConsultasTVC.swift */; };
@@ -30,15 +31,9 @@
 		77D3CF0C208FF98300EFBBD5 /* SalaM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF02208FF98100EFBBD5 /* SalaM.swift */; };
 		77D3CF0D208FF98300EFBBD5 /* CriptografiaM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF03208FF98200EFBBD5 /* CriptografiaM.swift */; };
 		77D3CF0E208FF98300EFBBD5 /* SemestreLetivoM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF04208FF98200EFBBD5 /* SemestreLetivoM.swift */; };
-		77D3CF17208FF9AE00EFBBD5 /* SemestreLetivoCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF0F208FF9AC00EFBBD5 /* SemestreLetivoCD.swift */; };
-		77D3CF18208FF9AE00EFBBD5 /* UnidadeCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF10208FF9AD00EFBBD5 /* UnidadeCD.swift */; };
-		77D3CF19208FF9AE00EFBBD5 /* SemestreCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF11208FF9AD00EFBBD5 /* SemestreCD.swift */; };
-		77D3CF1A208FF9AE00EFBBD5 /* PredioCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF12208FF9AD00EFBBD5 /* PredioCD.swift */; };
-		77D3CF1B208FF9AE00EFBBD5 /* SalaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF13208FF9AD00EFBBD5 /* SalaCD.swift */; };
-		77D3CF1C208FF9AE00EFBBD5 /* OfertaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF14208FF9AD00EFBBD5 /* OfertaCD.swift */; };
-		77D3CF1D208FF9AE00EFBBD5 /* AlocacaoSalaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF15208FF9AD00EFBBD5 /* AlocacaoSalaCD.swift */; };
-		77D3CF1E208FF9AE00EFBBD5 /* CursoCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF16208FF9AE00EFBBD5 /* CursoCD.swift */; };
 		77D3CF20208FFC1100EFBBD5 /* CursoM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF1F208FFC1100EFBBD5 /* CursoM.swift */; };
+		77E6C8F5209E673200B9CFFC /* UnidadeCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */; };
+		77F13FF5209D47180054F82A /*  ContextoCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13FF4209D47180054F82A /*  ContextoCD.swift */; };
 		A74BFF6D20801A19004806EE /* Conexao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74BFF6C20801A19004806EE /* Conexao.swift */; };
 		A77539682076D81F00B7652D /* NoticiaC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77539672076D81F00B7652D /* NoticiaC.swift */; };
 		A77DB10920869FF500BFC98F /* DadosC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DB10820869FF500BFC98F /* DadosC.swift */; };
@@ -48,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37288E8C20A27EB100192184 /* PredioCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredioCD.swift; sourceTree = "<group>"; };
 		77021451206922B100B3C261 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		770214532069269F00B3C261 /* NoticiasTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasTVC.swift; sourceTree = "<group>"; };
 		770214552069286F00B3C261 /* ConsultasTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultasTVC.swift; sourceTree = "<group>"; };
@@ -73,15 +69,9 @@
 		77D3CF02208FF98100EFBBD5 /* SalaM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaM.swift; sourceTree = "<group>"; };
 		77D3CF03208FF98200EFBBD5 /* CriptografiaM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriptografiaM.swift; sourceTree = "<group>"; };
 		77D3CF04208FF98200EFBBD5 /* SemestreLetivoM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemestreLetivoM.swift; sourceTree = "<group>"; };
-		77D3CF0F208FF9AC00EFBBD5 /* SemestreLetivoCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemestreLetivoCD.swift; sourceTree = "<group>"; };
-		77D3CF10208FF9AD00EFBBD5 /* UnidadeCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnidadeCD.swift; sourceTree = "<group>"; };
-		77D3CF11208FF9AD00EFBBD5 /* SemestreCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SemestreCD.swift; sourceTree = "<group>"; };
-		77D3CF12208FF9AD00EFBBD5 /* PredioCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredioCD.swift; sourceTree = "<group>"; };
-		77D3CF13208FF9AD00EFBBD5 /* SalaCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalaCD.swift; sourceTree = "<group>"; };
-		77D3CF14208FF9AD00EFBBD5 /* OfertaCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfertaCD.swift; sourceTree = "<group>"; };
-		77D3CF15208FF9AD00EFBBD5 /* AlocacaoSalaCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlocacaoSalaCD.swift; sourceTree = "<group>"; };
-		77D3CF16208FF9AE00EFBBD5 /* CursoCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursoCD.swift; sourceTree = "<group>"; };
 		77D3CF1F208FFC1100EFBBD5 /* CursoM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoM.swift; sourceTree = "<group>"; };
+		77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadeCD.swift; sourceTree = "<group>"; };
+		77F13FF4209D47180054F82A /*  ContextoCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ContextoCD.swift"; sourceTree = "<group>"; };
 		A74BFF6C20801A19004806EE /* Conexao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conexao.swift; sourceTree = "<group>"; };
 		A77539672076D81F00B7652D /* NoticiaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaC.swift; sourceTree = "<group>"; };
 		A77DB10820869FF500BFC98F /* DadosC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosC.swift; sourceTree = "<group>"; };
@@ -153,7 +143,7 @@
 		774C348E2052B8FB00972451 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A73C068820895C4400C0E7BF /* CoreData */,
+				77E6C8F3209E666800B9CFFC /* CoreData */,
 				A77539672076D81F00B7652D /* NoticiaC.swift */,
 				A77DB10820869FF500BFC98F /* DadosC.swift */,
 			);
@@ -178,17 +168,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A73C068820895C4400C0E7BF /* CoreData */ = {
+		77E6C8F3209E666800B9CFFC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				77D3CF15208FF9AD00EFBBD5 /* AlocacaoSalaCD.swift */,
-				77D3CF16208FF9AE00EFBBD5 /* CursoCD.swift */,
-				77D3CF14208FF9AD00EFBBD5 /* OfertaCD.swift */,
-				77D3CF12208FF9AD00EFBBD5 /* PredioCD.swift */,
-				77D3CF13208FF9AD00EFBBD5 /* SalaCD.swift */,
-				77D3CF11208FF9AD00EFBBD5 /* SemestreCD.swift */,
-				77D3CF0F208FF9AC00EFBBD5 /* SemestreLetivoCD.swift */,
-				77D3CF10208FF9AD00EFBBD5 /* UnidadeCD.swift */,
+				77F13FF4209D47180054F82A /*  ContextoCD.swift */,
+				77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */,
+				37288E8C20A27EB100192184 /* PredioCD.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -289,9 +274,8 @@
 				77021452206922B100B3C261 /* HomeVC.swift in Sources */,
 				A77539682076D81F00B7652D /* NoticiaC.swift in Sources */,
 				770214562069286F00B3C261 /* ConsultasTVC.swift in Sources */,
+				77E6C8F5209E673200B9CFFC /* UnidadeCD.swift in Sources */,
 				770214582069370600B3C261 /* AbaTBC.swift in Sources */,
-				77D3CF17208FF9AE00EFBBD5 /* SemestreLetivoCD.swift in Sources */,
-				77D3CF19208FF9AE00EFBBD5 /* SemestreCD.swift in Sources */,
 				77D3CF0C208FF98300EFBBD5 /* SalaM.swift in Sources */,
 				77D3CF06208FF98300EFBBD5 /* SemestreM.swift in Sources */,
 				A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */,
@@ -300,11 +284,9 @@
 				774775521F58CDF90005A257 /* AppDelegate.swift in Sources */,
 				7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */,
 				7709B2F6207406D400DAAAC4 /* ConsultaDetalhesVC.swift in Sources */,
-				77D3CF1B208FF9AE00EFBBD5 /* SalaCD.swift in Sources */,
-				77D3CF1C208FF9AE00EFBBD5 /* OfertaCD.swift in Sources */,
 				77D3CF05208FF98300EFBBD5 /* PredioM.swift in Sources */,
-				77D3CF1E208FF9AE00EFBBD5 /* CursoCD.swift in Sources */,
 				77D3CF20208FFC1100EFBBD5 /* CursoM.swift in Sources */,
+				77F13FF5209D47180054F82A /*  ContextoCD.swift in Sources */,
 				77D3CF0B208FF98300EFBBD5 /* NoticiaM.swift in Sources */,
 				A77DB10920869FF500BFC98F /* DadosC.swift in Sources */,
 				77D3CF0D208FF98300EFBBD5 /* CriptografiaM.swift in Sources */,
@@ -312,13 +294,11 @@
 				77D3CF09208FF98300EFBBD5 /* OfertaM.swift in Sources */,
 				7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */,
 				77D3CF07208FF98300EFBBD5 /* AlocacaoSalaM.swift in Sources */,
+				37288E8D20A27EB100192184 /* PredioCD.swift in Sources */,
 				A74BFF6D20801A19004806EE /* Conexao.swift in Sources */,
-				77D3CF1A208FF9AE00EFBBD5 /* PredioCD.swift in Sources */,
 				7709B2ED2072E1EE00DAAAC4 /* SairVC.swift in Sources */,
 				7709B2F42074069600DAAAC4 /* HorarioConsultaVC.swift in Sources */,
 				77D3CF0A208FF98300EFBBD5 /* PeriodoM.swift in Sources */,
-				77D3CF1D208FF9AE00EFBBD5 /* AlocacaoSalaCD.swift in Sources */,
-				77D3CF18208FF9AE00EFBBD5 /* UnidadeCD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

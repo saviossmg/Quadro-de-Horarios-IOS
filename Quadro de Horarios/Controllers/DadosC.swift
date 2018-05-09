@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
 class DadosC
 {
-    //listas com os dados para salvar
+    //modelos de dados
     var unidades = [UnidadeM]()
     var predios = [PredioM]()
     var salas = [SalaM]()
@@ -24,6 +22,10 @@ class DadosC
    
     //chave
     var chave = CriptografiaM()
+    
+    //controladores do banco com funcoes do core data
+    let unidadeC =  UnidadeCD()
+    let predioC = PredioCD()
     
     //lista de endereços
     let enderecos = [
@@ -38,16 +40,18 @@ class DadosC
     
     func verificaDados()->Bool{
         var existe = false
+        //lista os registros do banco
+        unidades = unidadeC.listar()
+        predios = predioC.listar()
+        
         //verifica se existem registros no banco, se todos estiverem ok ele irá
-        let unid = UnidadeCD.getAll(moc: managedObjectContext)!
-        print("VerificaDados: \(unid)")
-        if(unid.count > 0){
+        if(unidades.count > 0 && predios.count > 0){
             existe = true
         }
         return existe
     }
     
-    func buscarDados(){
+    func buscarDados(sincronia: Bool){
         //baixa os dados da internet
         let vrUnidades = self.buscaUnidade()
         let vrPredios = self.buscaPredio()
@@ -55,18 +59,31 @@ class DadosC
         let vrSemestres = self.buscaSemestre()
         let vrSemestreletivo = self.buscaSemestreletivo()
         
+        var mensagem: String = "mensagem aquis"
+        
         //salva no banco de acordo com a ordem, percorrendo  a lista de retorno
-        for uni in vrUnidades{
-            UnidadeCD.save(moc: managedObjectContext,id:uni.id,nome:uni.nome,endereco:uni.endereco,cep:uni.cep,lati:uni.latitude,long:uni.longitude)
-            //save(moc:NSManagedObjectContext, id:Int32, nome:String, endereco:String, cep:Int32, lati: Float, long: Float)->UnidadeCD?
-            //self.professor?.universidades.insert(universidade!)
-            //self.professor?.save()
+        //se for sincronia, lista os dados do banco e vai comparar com o ID
+        //se nao for apenas salva
+        if(!sincronia){
+            //salvamento aqui
+            for uni in vrUnidades{
+                unidadeC.salvar(obj: uni)
+            }
+            
+            for pre in vrPredios{
+                predioC.salvar(obj: pre)
+            }
+            
+            mensagem = "mensagem de dados baixados"
+        }
+        else{
+            //atualização aqui
+            //atualiza tambem as ofertas e as alocações
+            
+            mensagem = "mensagem de dados sincronizados"
         }
         
-        for pre in vrPredios{
-            //do here
-        }
-        
+        /*
         for sal in vrSalas{
             //do here
         }
@@ -78,6 +95,7 @@ class DadosC
         for semlet in vrSemestreletivo{
             //do here
         }
+ */
         
     }
     
@@ -107,8 +125,10 @@ class DadosC
                         unidade.nome = (json["nome"] as! String)
                         unidade.endereco = (json["endereco"] as! String)
                         unidade.cep = (json["cep"] as! Int32)
-                        unidade.latitude = (json["latitude"] as! Float)
-                        unidade.longitude = (json["longitude"] as! Float)
+                        let lat = json["latitude"] as! NSNumber
+                        let lon = json["longitude"] as! NSNumber
+                        unidade.latitude = lat.floatValue
+                        unidade.longitude = lon.floatValue
                         self.unidades.append(unidade)
                     }
                 }
@@ -119,50 +139,6 @@ class DadosC
         while !terminou{}
         return unidades
     }
-    
-    /*
-     func buscaUnidade()->[UnidadeCD]
-     {
-     let url = URL(string: enderecos[0])!
-     // post the data
-     var request = URLRequest(url: url)
-     request.httpMethod = "POST"
-     let postData = "hash=\(chave.chave)".data(using: .utf8)
-     request.httpBody = postData
-     
-     // execute the datatask and validate the result
-     let session = URLSession.shared
-     session.dataTask(with: request) {
-     (data, response, error) in
-     if error == nil, let userObject = (try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any] ) {
-     //For getting customer_id try like this
-     self.unidades.removeAll()
-     if let data = userObject!["data"] as? [[String: Any]] {
-     for jsonDict in data {
-     let json = jsonDict as NSDictionary
-     let unidade = UnidadeCD()
-     if let numero = json["id"]
-     {
-     print("AGORA VAI \(numero)")
-     let int32 = numero as! Int
-     unidade.id = Int32(int32)
-     }
-     
-     unidade.nome = (json["nome"] as! String)
-     unidade.endereco = (json["endereco"] as! String)
-     unidade.cep = (json["cep"] as! Int32)
-     unidade.latitude = (json["latitude"] as! Float)
-     unidade.longitude = (json["longitude"] as! Float)
-     self.unidades.append(unidade)
-     }
-     }
-     }
-     }.resume()
-     print("unidades \(self.unidades.count)")
-     //retorna no final
-     return unidades
-     }
-     */
     
     //busca os predios
     func buscaPredio()->[PredioM]
