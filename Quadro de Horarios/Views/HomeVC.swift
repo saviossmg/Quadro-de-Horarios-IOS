@@ -15,6 +15,17 @@ class HomeVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Conexao.isInternetAvailable(webSiteToPing: nil) { (isInternetAvailable) in
+            guard isInternetAvailable else {
+                // Inform user for example
+                return
+            }
+            print("ed0")
+            // Do some action if there is Internet
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

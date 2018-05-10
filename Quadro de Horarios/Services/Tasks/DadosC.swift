@@ -24,6 +24,7 @@ class DadosC
     var chave = CriptografiaM()
     
     //controladores do banco com funcoes do core data
+    //let ctx = ContextoCD()
     let unidadeC =  UnidadeCD()
     let predioC = PredioCD()
     

@@ -143,9 +143,10 @@
 		774C348E2052B8FB00972451 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				77F13FF4209D47180054F82A /*  ContextoCD.swift */,
+				77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */,
+				37288E8C20A27EB100192184 /* PredioCD.swift */,
 				77E6C8F3209E666800B9CFFC /* CoreData */,
-				A77539672076D81F00B7652D /* NoticiaC.swift */,
-				A77DB10820869FF500BFC98F /* DadosC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,18 +172,25 @@
 		77E6C8F3209E666800B9CFFC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				77F13FF4209D47180054F82A /*  ContextoCD.swift */,
-				77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */,
-				37288E8C20A27EB100192184 /* PredioCD.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A716399020A4ECAB00B98FB5 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				A77539672076D81F00B7652D /* NoticiaC.swift */,
+				A77DB10820869FF500BFC98F /* DadosC.swift */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 		A7ACDB8420781D5F007D13BD /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A7ACDB8520781D6E007D13BD /* Datas.swift */,
+				A716399020A4ECAB00B98FB5 /* Tasks */,
 				A74BFF6C20801A19004806EE /* Conexao.swift */,
+				A7ACDB8520781D6E007D13BD /* Datas.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
