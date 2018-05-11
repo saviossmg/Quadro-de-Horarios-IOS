@@ -31,14 +31,10 @@ class ConsultasTVC: UITableViewController {
         
         //carrega tudo se não tiver nada
         if(!existe){
-            print("nao tem dados")
-            var ret = dadosC.buscarDados(sincronia: false)
+            let ret = dadosC.buscarDados(sincronia: false)
             let alert = UIAlertController(title: "", message: "\(ret)", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }
-        else{
-            print("tem dados")
         }
     }
     

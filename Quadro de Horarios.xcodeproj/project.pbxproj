@@ -15,7 +15,7 @@
 		7709B2ED2072E1EE00DAAAC4 /* SairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */; };
 		7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */; };
 		7709B2F42074069600DAAAC4 /* HorarioConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */; };
-		7709B2F6207406D400DAAAC4 /* ConsultaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F5207406D400DAAAC4 /* ConsultaDetalhesVC.swift */; };
+		7709B2F6207406D400DAAAC4 /* HorarioDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F5207406D400DAAAC4 /* HorarioDetalhesVC.swift */; };
 		774775521F58CDF90005A257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774775511F58CDF90005A257 /* AppDelegate.swift */; };
 		774775571F58CDF90005A257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774775551F58CDF90005A257 /* Main.storyboard */; };
 		7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774775581F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld */; };
@@ -44,6 +44,7 @@
 		A795461420A50D4900FB6F9C /* OfertaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795461320A50D4900FB6F9C /* OfertaCD.swift */; };
 		A795461620A50DBE00FB6F9C /* AlocacaoSalaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795461520A50DBE00FB6F9C /* AlocacaoSalaCD.swift */; };
 		A7ACDB8620781D6E007D13BD /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACDB8520781D6E007D13BD /* Datas.swift */; };
+		A7BAD0DA20A601DC0098EB49 /* HorarioPesquisaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD0D920A601DC0098EB49 /* HorarioPesquisaVC.swift */; };
 		A7FCD90620750C4500B039BD /* NoticiaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90520750C4500B039BD /* NoticiaTVC.swift */; };
 		A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +58,7 @@
 		7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SairVC.swift; sourceTree = "<group>"; };
 		7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaDetalhesVC.swift; sourceTree = "<group>"; };
 		7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioConsultaVC.swift; sourceTree = "<group>"; };
-		7709B2F5207406D400DAAAC4 /* ConsultaDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultaDetalhesVC.swift; sourceTree = "<group>"; };
+		7709B2F5207406D400DAAAC4 /* HorarioDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioDetalhesVC.swift; sourceTree = "<group>"; };
 		7747754E1F58CDF90005A257 /* Quadro de Horarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quadro de Horarios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		774775511F58CDF90005A257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774775561F58CDF90005A257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		A795461320A50D4900FB6F9C /* OfertaCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfertaCD.swift; sourceTree = "<group>"; };
 		A795461520A50DBE00FB6F9C /* AlocacaoSalaCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoSalaCD.swift; sourceTree = "<group>"; };
 		A7ACDB8520781D6E007D13BD /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
+		A7BAD0D920A601DC0098EB49 /* HorarioPesquisaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioPesquisaVC.swift; sourceTree = "<group>"; };
 		A7FCD90520750C4500B039BD /* NoticiaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTVC.swift; sourceTree = "<group>"; };
 		A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,15 +141,10 @@
 		774C348D2052B87900972451 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A7BAD0DD20A603890098EB49 /* Fragments */,
+				A7BAD0DC20A602B60098EB49 /* Activitys */,
 				A7FCD90420750BDF00B039BD /* Celulas */,
-				77021451206922B100B3C261 /* HomeVC.swift */,
-				770214532069269F00B3C261 /* NoticiasTVC.swift */,
-				770214552069286F00B3C261 /* ConsultasTVC.swift */,
 				770214572069370600B3C261 /* AbaTBC.swift */,
-				7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */,
-				7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */,
-				7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */,
-				7709B2F5207406D400DAAAC4 /* ConsultaDetalhesVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +200,28 @@
 				A7ACDB8520781D6E007D13BD /* Datas.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A7BAD0DC20A602B60098EB49 /* Activitys */ = {
+			isa = PBXGroup;
+			children = (
+				A7BAD0D920A601DC0098EB49 /* HorarioPesquisaVC.swift */,
+				7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */,
+				7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */,
+				7709B2F5207406D400DAAAC4 /* HorarioDetalhesVC.swift */,
+			);
+			path = Activitys;
+			sourceTree = "<group>";
+		};
+		A7BAD0DD20A603890098EB49 /* Fragments */ = {
+			isa = PBXGroup;
+			children = (
+				77021451206922B100B3C261 /* HomeVC.swift */,
+				7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */,
+				770214532069269F00B3C261 /* NoticiasTVC.swift */,
+				770214552069286F00B3C261 /* ConsultasTVC.swift */,
+			);
+			path = Fragments;
 			sourceTree = "<group>";
 		};
 		A7FCD90420750BDF00B039BD /* Celulas */ = {
@@ -302,7 +321,7 @@
 				770214542069269F00B3C261 /* NoticiasTVC.swift in Sources */,
 				774775521F58CDF90005A257 /* AppDelegate.swift in Sources */,
 				7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */,
-				7709B2F6207406D400DAAAC4 /* ConsultaDetalhesVC.swift in Sources */,
+				7709B2F6207406D400DAAAC4 /* HorarioDetalhesVC.swift in Sources */,
 				A795461020A50D0C00FB6F9C /* SemestreLetivoCD.swift in Sources */,
 				77D3CF05208FF98300EFBBD5 /* PredioM.swift in Sources */,
 				A795460C20A50C4300FB6F9C /* SalaCD.swift in Sources */,
@@ -311,6 +330,7 @@
 				77F13FF5209D47180054F82A /*  ContextoCD.swift in Sources */,
 				77D3CF0B208FF98300EFBBD5 /* NoticiaM.swift in Sources */,
 				A77DB10920869FF500BFC98F /* DadosC.swift in Sources */,
+				A7BAD0DA20A601DC0098EB49 /* HorarioPesquisaVC.swift in Sources */,
 				77D3CF0D208FF98300EFBBD5 /* CriptografiaM.swift in Sources */,
 				77D3CF08208FF98300EFBBD5 /* UnidadeM.swift in Sources */,
 				77D3CF09208FF98300EFBBD5 /* OfertaM.swift in Sources */,
