@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p98-jZ-lN9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p98-jZ-lN9">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -99,10 +100,6 @@
         <scene sceneID="jsR-Fn-EoI">
             <objects>
                 <viewController id="EOS-KV-7Ej" customClass="NoticiaDetalhesVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N0k-0w-gPq"/>
-                        <viewControllerLayoutGuide type="bottom" id="3IZ-gT-4p8"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MhA-JV-HGk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,6 +132,7 @@
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="KTI-tl-faC"/>
                     </view>
                     <connections>
                         <outlet property="autor" destination="SPR-w2-Jtz" id="0aV-Q9-Y3o"/>
@@ -164,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="-2799" y="-735"/>
         </scene>
-        <!--Consultas e Alocacoes-->
+        <!--ConsultasTVC-->
         <scene sceneID="bv8-99-6gr">
             <objects>
                 <tableViewController id="hxZ-36-4GC" customClass="ConsultasTVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,24 +215,40 @@
                             <outlet property="delegate" destination="hxZ-36-4GC" id="gdd-Z8-dCZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Consultas e Alocacoes" id="IPc-VI-Ahf"/>
+                    <navigationItem key="navigationItem" id="IPc-VI-Ahf">
+                        <leftBarButtonItems>
+                            <barButtonItem title="sincronizar" image="sincronizar" id="WgW-eI-AuY">
+                                <connections>
+                                    <action selector="sincronizarDados:" destination="hxZ-36-4GC" id="Q0G-f8-685"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="recarregar" image="recarregar" id="jOD-c1-g5s">
+                                <connections>
+                                    <action selector="recarregarLista:" destination="hxZ-36-4GC" id="EkD-42-zfT"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="buscar" image="consulta" id="mIH-Gr-hrS">
+                            <connections>
+                                <action selector="consultarHorario:" destination="hxZ-36-4GC" id="iko-fs-AbW"/>
+                                <segue destination="L2o-fZ-qF1" kind="show" id="DW3-ue-adk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owz-8P-faQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1918.125" y="-735"/>
         </scene>
-        <!--View Controller-->
+        <!--Horario ConsultaVC-->
         <scene sceneID="t8U-mj-lxb">
             <objects>
-                <viewController id="L2o-fZ-qF1" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="z3a-cV-x9h"/>
-                        <viewControllerLayoutGuide type="bottom" id="GZ0-Rh-dMB"/>
-                    </layoutGuides>
+                <viewController id="L2o-fZ-qF1" customClass="HorarioConsultaVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8E-6F-9aa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CZ5-80-eHi"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4f-jx-lER" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -315,10 +329,6 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
         <scene sceneID="VWm-UH-T3z">
             <objects>
                 <viewController id="dYs-VU-8YD" customClass="SairVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rUY-Su-sfS"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tmd-hl-nGC"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fZ7-73-F8H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,6 +344,7 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="5eY-ax-iZQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sair" image="sair" id="Vc4-0x-3vb"/>
                 </viewController>
@@ -345,10 +356,6 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
         <scene sceneID="0pE-NU-FZd">
             <objects>
                 <viewController id="2Np-An-4kW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rzj-3z-paF"/>
-                        <viewControllerLayoutGuide type="bottom" id="2hR-06-XRx"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tru-kJ-Lt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,6 +389,7 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="uSp-6i-PkC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Localizar" image="localizar" id="J2O-eE-aoo"/>
                 </viewController>
@@ -418,7 +426,9 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
         <image name="info" width="30" height="30"/>
         <image name="localizar" width="30" height="30"/>
         <image name="news" width="30" height="30"/>
+        <image name="recarregar" width="30" height="30"/>
         <image name="sair" width="30" height="30"/>
+        <image name="sincronizar" width="30" height="30"/>
         <image name="zoomind" width="64" height="64"/>
         <image name="zoomoutd" width="64" height="64"/>
     </resources>

@@ -25,6 +25,18 @@ class ConsultasTVC: UITableViewController {
         
     }
     
+    //Consulta horarios com base em parametros
+    @IBAction func consultarHorario(_ sender: UIBarButtonItem) {
+    }
+    
+    //recarrega a lista de acordo com os dados do banco
+    @IBAction func recarregarLista(_ sender: UIBarButtonItem) {
+    }
+    
+    //sincroniza os dados existentes com o web service
+    @IBAction func sincronizarDados(_ sender: UIBarButtonItem) {
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         //verifica se os dados estão vazios
         let existe = dadosC.verificaDados()
