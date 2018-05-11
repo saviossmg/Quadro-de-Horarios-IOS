@@ -30,6 +30,7 @@ class DadosC
     let salaC = SalaCD()
     let semestreC = SemestreCD()
     let cursoC = CursoCD()
+    let semestreLetivoC = SemestreLetivoCD()
     
     //lista de endereços
     let enderecos = [
@@ -50,15 +51,16 @@ class DadosC
         salas = salaC.listar()
         semestres = semestreC.listar()
         cursos = cursoC.listar()
+        semestresLetivos = semestreLetivoC.listar()
         
         //verifica se existem registros no banco, se todos estiverem ok ele irá
-        if(unidades.count > 0 && predios.count > 0 && salas.count > 0 && semestres.count > 0 && cursos.count > 0){
+        if(unidades.count > 0 && predios.count > 0 && salas.count > 0 && semestres.count > 0 && cursos.count > 0 && semestresLetivos.count > 0){
             existe = true
         }
         return existe
     }
     
-    func buscarDados(sincronia: Bool){
+    func buscarDados(sincronia: Bool)->String{
         //baixa os dados da internet
         let vrUnidades = self.buscaUnidade()
         let vrPredios = self.buscaPredio()
@@ -95,7 +97,7 @@ class DadosC
             }
             
             for semlet in vrSemestreletivo{
-                //do here
+                semestreLetivoC.salvar(obj: semlet)
             }
             
             mensagem = "mensagem de dados baixados"
@@ -106,8 +108,7 @@ class DadosC
             
             mensagem = "mensagem de dados sincronizados"
         }
- 
-        print("\(mensagem)")
+        return mensagem
     }
     
     //busca as unidades

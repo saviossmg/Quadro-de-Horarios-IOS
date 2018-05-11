@@ -32,32 +32,17 @@ class ConsultasTVC: UITableViewController {
         //carrega tudo se não tiver nada
         if(!existe){
             print("nao tem dados")
-            dadosC.buscarDados(sincronia: false)
+            var ret = dadosC.buscarDados(sincronia: false)
+            let alert = UIAlertController(title: "", message: "\(ret)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         else{
             print("tem dados")
         }
     }
     
-    /*
-    func carregaDados(){
-        vrUnidades = dadosC.buscaUnidade()££
-        vrPredios = dadosC.buscaPredio()
-        vrSalas = dadosC.buscaSalas()
-        vrSemestres = dadosC.buscaSemestre()
-        vrSemestreLetivos = dadosC.buscaSemestreletivo()
-        vrCursos = dadosC.buscaCurso()
-        print("Unidades: \(self.vrUnidades.count)")
-        print("Predios: \(self.vrPredios.count)")
-        print("Salas: \(self.vrSalas.count)")
-        print("Semestres: \(self.vrSemestres.count)")
-        print("Semestres Letivos: \(self.vrSemestreLetivos.count)")
-        print("Cursos: \(self.vrCursos.count)")
-    }
-    */
-
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0

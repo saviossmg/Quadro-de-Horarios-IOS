@@ -12,7 +12,7 @@ class SemestreLetivoM
 {
     var id:Int32!
     var semestre:SemestreM!
-    var curso:Int32!
+    var curso:CursoM!
     var idsemestre:Int32!
     var idcurso:Int32!
 }
