@@ -27,6 +27,9 @@ class DadosC
     //let ctx = ContextoCD()
     let unidadeC =  UnidadeCD()
     let predioC = PredioCD()
+    let salaC = SalaCD()
+    let semestreC = SemestreCD()
+    let cursoC = CursoCD()
     
     //lista de endereços
     let enderecos = [
@@ -44,9 +47,12 @@ class DadosC
         //lista os registros do banco
         unidades = unidadeC.listar()
         predios = predioC.listar()
+        salas = salaC.listar()
+        semestres = semestreC.listar()
+        cursos = cursoC.listar()
         
         //verifica se existem registros no banco, se todos estiverem ok ele irá
-        if(unidades.count > 0 && predios.count > 0){
+        if(unidades.count > 0 && predios.count > 0 && salas.count > 0 && semestres.count > 0 && cursos.count > 0){
             existe = true
         }
         return existe
@@ -58,6 +64,7 @@ class DadosC
         let vrPredios = self.buscaPredio()
         let vrSalas = self.buscaSalas()
         let vrSemestres = self.buscaSemestre()
+        let vrCursos = self.buscaCurso()
         let vrSemestreletivo = self.buscaSemestreletivo()
         
         var mensagem: String = "mensagem aquis"
@@ -75,6 +82,22 @@ class DadosC
                 predioC.salvar(obj: pre)
             }
             
+            for sal in vrSalas{
+                salaC.salvar(obj: sal)
+            }
+            
+            for sem in vrSemestres{
+                semestreC.salvar(obj: sem)
+            }
+            
+            for cur in vrCursos{
+                cursoC.salvar(obj: cur)
+            }
+            
+            for semlet in vrSemestreletivo{
+                //do here
+            }
+            
             mensagem = "mensagem de dados baixados"
         }
         else{
@@ -83,21 +106,8 @@ class DadosC
             
             mensagem = "mensagem de dados sincronizados"
         }
-        
-        /*
-        for sal in vrSalas{
-            //do here
-        }
-        
-        for sem in vrSemestres{
-            //do here
-        }
-        
-        for semlet in vrSemestreletivo{
-            //do here
-        }
- */
-        
+ 
+        print("\(mensagem)")
     }
     
     //busca as unidades
@@ -325,10 +335,6 @@ class DadosC
         while !terminou{}
         //retorna no final
         return cursos
-    }
-    
-    func salvarBanco(){
-        
     }
     
 }

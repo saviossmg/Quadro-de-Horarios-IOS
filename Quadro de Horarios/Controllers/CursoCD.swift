@@ -1,31 +1,31 @@
 //
-//  PredioCD.swift
+//  CursoCD.swift
 //  Quadro de Horarios
 //
-//  Created by Savio Martins Valentim on 08/05/18.
+//  Created by LabMacMini06 on 10/05/2018.
 //  Copyright © 2018 UNITINS. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class PredioCD: NSObject, NSFetchedResultsControllerDelegate
+class CursoCD: NSObject, NSFetchedResultsControllerDelegate
 {
     //objetos necessários
     var ctx = ContextoCD()
-    var predio = PredioM()
-    var predios: [PredioM] = []
+    var curso = CursoM()
+    var cursos: [CursoM] = []
     
     //utilitarios do core data
     let searchController = UISearchController(searchResultsController: nil)
-    var resultManager:NSFetchedResultsController<Predio>?
+    var resultManager:NSFetchedResultsController<Curso>?
     var findUnidade = UnidadeCD()
     
     //listagem geral que retornará todos os dados
-    func listar()->[PredioM]{
+    func listar()->[CursoM]{
         //zera a lista
-        predios = []
-        let listar:NSFetchRequest<Predio> = Predio.fetchRequest()
+        cursos = []
+        let listar:NSFetchRequest<Curso> = Curso.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)
         listar.sortDescriptors = [ordenaById]
@@ -48,33 +48,31 @@ class PredioCD: NSObject, NSFetchedResultsControllerDelegate
         //se vierem registros então ele vai fazer preencher o objeto e retornar a lista preenchida
         if(total > 0){
             //faz o laço
-            for pre in (resultManager?.fetchedObjects)!{
-                let aux = PredioM()
-                aux.id = pre.id
-                aux.nome = pre.nome
-                aux.pisos = pre.pisos
-                aux.ativo = pre.ativo
+            for cur in (resultManager?.fetchedObjects)!{
+                let aux = CursoM()
+                aux.id = cur.id
+                aux.nome = cur.nome
+                aux.codCurso = cur.codcurso
                 //referencia a outros objetos
-                aux.idunidade = pre.idunidade
-                aux.unidade = findUnidade.findById(id: pre.idunidade)
-                predios.append(aux)
+                aux.idunidade = cur.idunidade
+                aux.unidade = findUnidade.findById(id: cur.idunidade)
+                
+                cursos.append(aux)
             }
         }
-        return predios
+        return cursos
         
     }
     
     //salva um registro
-    func salvar(obj: PredioM){
-        let aux = Predio(context: ctx.contexto)
+    func salvar(obj: CursoM){
+        let aux = Curso(context: ctx.contexto)
         aux.id = obj.id
         aux.nome = obj.nome
-        aux.idunidade = obj.idunidade
-        aux.pisos = obj.pisos
-        aux.ativo = obj.ativo
+        aux.codcurso = obj.codCurso
         //seta o objeto
+        aux.idunidade = obj.idunidade
         aux.unidade = findUnidade.findByIdCD(id: obj.idunidade)
-        // como setar os objtos core data ?
         do {
             try ctx.contexto.save()
         } catch {
@@ -88,9 +86,9 @@ class PredioCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //busca um registro pelo ID
-    func findById(id: Int32)->PredioM{
-        predio = PredioM()
-        let listar:NSFetchRequest<Predio> = Predio.fetchRequest()
+    func findById(id: Int32)->CursoM{
+        curso = CursoM()
+        let listar:NSFetchRequest<Curso> = Curso.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)
         listar.sortDescriptors = [ordenaById]
@@ -113,25 +111,23 @@ class PredioCD: NSObject, NSFetchedResultsControllerDelegate
         //se vierem registros então ele vai fazer preencher o objeto e retornar a lista preenchida
         if(total > 0){
             //faz o laço para verificar se objeto está corredo
-            for pre in (resultManager?.fetchedObjects)!{
-                if(pre.id == id) {
-                    predio.id = pre.id
-                    predio.nome = pre.nome
-                    predio.pisos = pre.pisos
-                    predio.ativo = pre.ativo
+            for cur in (resultManager?.fetchedObjects)!{
+                if(cur.id == id) {
+                    curso.id = id
+                    curso.nome = cur.nome
+                    curso.codCurso = cur.codcurso
                     //seta o objeto
-                    predio.idunidade = pre.idunidade
-                    predio.unidade = findUnidade.findById(id: pre.idunidade)
+                    curso.idunidade = cur.idunidade
+                    curso.unidade = findUnidade.findById(id: cur.idunidade)
                 }
             }
         }
-        return predio
-        
+        return curso
     }
     
-    func findByIdCD(id: Int32)->Predio{
-        var auxPredioCD = Predio()
-        let listar:NSFetchRequest<Predio> = Predio.fetchRequest()
+    func findByIdCD(id: Int32)->Curso{
+        var auxCursoCD = Curso()
+        let listar:NSFetchRequest<Curso> = Curso.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)
         listar.sortDescriptors = [ordenaById]
@@ -154,13 +150,12 @@ class PredioCD: NSObject, NSFetchedResultsControllerDelegate
         //se vierem registros então ele vai fazer preencher o objeto e retornar a lista preenchida
         if(total > 0){
             //faz o laço para verificar se objeto está corredo
-            for pre in (resultManager?.fetchedObjects)!{
-                if pre.id == id{
-                    auxPredioCD = pre
+            for cur in (resultManager?.fetchedObjects)!{
+                if cur.id == id{
+                    auxCursoCD = cur
                 }
             }
         }
-        return auxPredioCD
+        return auxCursoCD
     }
-    
 }

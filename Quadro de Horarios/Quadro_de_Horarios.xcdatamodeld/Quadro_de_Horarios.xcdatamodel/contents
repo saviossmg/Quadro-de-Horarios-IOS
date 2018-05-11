@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1212" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AlocacaoSala" representedClassName="AlocacaoSala" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="idcurso" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -48,6 +48,7 @@
         <relationship name="unidade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unidade" inverseName="predio" inverseEntity="Unidade" syncable="YES"/>
     </entity>
     <entity name="Sala" representedClassName="Sala" syncable="YES" codeGenerationType="class">
+        <attribute name="ativo" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="idpredio" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
@@ -83,7 +84,7 @@
         <element name="Curso" positionX="-27" positionY="108" width="128" height="120"/>
         <element name="Oferta" positionX="-252" positionY="321" width="128" height="300"/>
         <element name="Predio" positionX="-549" positionY="99" width="128" height="135"/>
-        <element name="Sala" positionX="-389" positionY="99" width="128" height="135"/>
+        <element name="Sala" positionX="-389" positionY="99" width="128" height="150"/>
         <element name="Semestre" positionX="-468" positionY="282" width="128" height="105"/>
         <element name="SemestreLetivo" positionX="-18" positionY="213" width="128" height="120"/>
         <element name="Unidade" positionX="-729" positionY="99" width="128" height="150"/>

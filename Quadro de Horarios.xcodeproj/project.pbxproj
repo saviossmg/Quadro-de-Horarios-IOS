@@ -37,6 +37,12 @@
 		A74BFF6D20801A19004806EE /* Conexao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74BFF6C20801A19004806EE /* Conexao.swift */; };
 		A77539682076D81F00B7652D /* NoticiaC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77539672076D81F00B7652D /* NoticiaC.swift */; };
 		A77DB10920869FF500BFC98F /* DadosC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DB10820869FF500BFC98F /* DadosC.swift */; };
+		A795460C20A50C4300FB6F9C /* SalaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795460B20A50C4300FB6F9C /* SalaCD.swift */; };
+		A795460E20A50CDE00FB6F9C /* SemestreCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795460D20A50CDE00FB6F9C /* SemestreCD.swift */; };
+		A795461020A50D0C00FB6F9C /* SemestreLetivoCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795460F20A50D0C00FB6F9C /* SemestreLetivoCD.swift */; };
+		A795461220A50D3800FB6F9C /* CursoCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795461120A50D3800FB6F9C /* CursoCD.swift */; };
+		A795461420A50D4900FB6F9C /* OfertaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795461320A50D4900FB6F9C /* OfertaCD.swift */; };
+		A795461620A50DBE00FB6F9C /* AlocacaoSalaCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A795461520A50DBE00FB6F9C /* AlocacaoSalaCD.swift */; };
 		A7ACDB8620781D6E007D13BD /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACDB8520781D6E007D13BD /* Datas.swift */; };
 		A7FCD90620750C4500B039BD /* NoticiaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90520750C4500B039BD /* NoticiaTVC.swift */; };
 		A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */; };
@@ -75,6 +81,12 @@
 		A74BFF6C20801A19004806EE /* Conexao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conexao.swift; sourceTree = "<group>"; };
 		A77539672076D81F00B7652D /* NoticiaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaC.swift; sourceTree = "<group>"; };
 		A77DB10820869FF500BFC98F /* DadosC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosC.swift; sourceTree = "<group>"; };
+		A795460B20A50C4300FB6F9C /* SalaCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaCD.swift; sourceTree = "<group>"; };
+		A795460D20A50CDE00FB6F9C /* SemestreCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemestreCD.swift; sourceTree = "<group>"; };
+		A795460F20A50D0C00FB6F9C /* SemestreLetivoCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemestreLetivoCD.swift; sourceTree = "<group>"; };
+		A795461120A50D3800FB6F9C /* CursoCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoCD.swift; sourceTree = "<group>"; };
+		A795461320A50D4900FB6F9C /* OfertaCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfertaCD.swift; sourceTree = "<group>"; };
+		A795461520A50DBE00FB6F9C /* AlocacaoSalaCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoSalaCD.swift; sourceTree = "<group>"; };
 		A7ACDB8520781D6E007D13BD /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		A7FCD90520750C4500B039BD /* NoticiaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTVC.swift; sourceTree = "<group>"; };
 		A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoTVC.swift; sourceTree = "<group>"; };
@@ -146,7 +158,12 @@
 				77F13FF4209D47180054F82A /*  ContextoCD.swift */,
 				77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */,
 				37288E8C20A27EB100192184 /* PredioCD.swift */,
-				77E6C8F3209E666800B9CFFC /* CoreData */,
+				A795460B20A50C4300FB6F9C /* SalaCD.swift */,
+				A795460D20A50CDE00FB6F9C /* SemestreCD.swift */,
+				A795460F20A50D0C00FB6F9C /* SemestreLetivoCD.swift */,
+				A795461120A50D3800FB6F9C /* CursoCD.swift */,
+				A795461320A50D4900FB6F9C /* OfertaCD.swift */,
+				A795461520A50DBE00FB6F9C /* AlocacaoSalaCD.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,13 +184,6 @@
 				77D3CF1F208FFC1100EFBBD5 /* CursoM.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		77E6C8F3209E666800B9CFFC /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		A716399020A4ECAB00B98FB5 /* Tasks */ = {
@@ -287,13 +297,17 @@
 				77D3CF0C208FF98300EFBBD5 /* SalaM.swift in Sources */,
 				77D3CF06208FF98300EFBBD5 /* SemestreM.swift in Sources */,
 				A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */,
+				A795461420A50D4900FB6F9C /* OfertaCD.swift in Sources */,
 				77D3CF0E208FF98300EFBBD5 /* SemestreLetivoM.swift in Sources */,
 				770214542069269F00B3C261 /* NoticiasTVC.swift in Sources */,
 				774775521F58CDF90005A257 /* AppDelegate.swift in Sources */,
 				7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */,
 				7709B2F6207406D400DAAAC4 /* ConsultaDetalhesVC.swift in Sources */,
+				A795461020A50D0C00FB6F9C /* SemestreLetivoCD.swift in Sources */,
 				77D3CF05208FF98300EFBBD5 /* PredioM.swift in Sources */,
+				A795460C20A50C4300FB6F9C /* SalaCD.swift in Sources */,
 				77D3CF20208FFC1100EFBBD5 /* CursoM.swift in Sources */,
+				A795461220A50D3800FB6F9C /* CursoCD.swift in Sources */,
 				77F13FF5209D47180054F82A /*  ContextoCD.swift in Sources */,
 				77D3CF0B208FF98300EFBBD5 /* NoticiaM.swift in Sources */,
 				A77DB10920869FF500BFC98F /* DadosC.swift in Sources */,
@@ -302,10 +316,12 @@
 				77D3CF09208FF98300EFBBD5 /* OfertaM.swift in Sources */,
 				7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */,
 				77D3CF07208FF98300EFBBD5 /* AlocacaoSalaM.swift in Sources */,
+				A795460E20A50CDE00FB6F9C /* SemestreCD.swift in Sources */,
 				37288E8D20A27EB100192184 /* PredioCD.swift in Sources */,
 				A74BFF6D20801A19004806EE /* Conexao.swift in Sources */,
 				7709B2ED2072E1EE00DAAAC4 /* SairVC.swift in Sources */,
 				7709B2F42074069600DAAAC4 /* HorarioConsultaVC.swift in Sources */,
+				A795461620A50DBE00FB6F9C /* AlocacaoSalaCD.swift in Sources */,
 				77D3CF0A208FF98300EFBBD5 /* PeriodoM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
