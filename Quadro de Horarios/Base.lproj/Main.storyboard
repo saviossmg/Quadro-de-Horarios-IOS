@@ -290,7 +290,11 @@
                         <viewLayoutGuide key="safeArea" id="CZ5-80-eHi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Consultas - Pesquisa" id="cSw-vM-KSP">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="B7x-km-usq"/>
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="B7x-km-usq">
+                            <connections>
+                                <action selector="acaoOk:" destination="L2o-fZ-qF1" id="r0O-UG-fCW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cursoPv" destination="E9z-F5-qRh" id="qEX-hP-m5N"/>

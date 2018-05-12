@@ -51,6 +51,11 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         
         //carrega os dados do combo
         carregaSemestre()
+        carregaCurso()
+        carregaPeriodo()
+        carregaSala()
+        carregaTurno()
+        carregaDia()
         
     }
     
@@ -64,22 +69,75 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == semestrePv{
-            return semestres.count
+        
+        switch pickerView {
+            case semestrePv:
+                return semestres.count
+            case cursoPv:
+                return cursos.count
+            case periodoPv:
+                return periodos.count
+            case salaPv:
+                return salas.count
+            case turnoPv:
+                return turnos.count
+            case diaPv:
+                return dias.count
+            default:
+                return 0
         }
-        else{
-            return 0
-        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == semestrePv{
-            //return teste[row]
-            return semestres[row].descricao
+        
+        switch pickerView {
+            case semestrePv:
+                return semestres[row].descricao
+            case cursoPv:
+                return cursos[row].nome
+            case periodoPv:
+                return periodos[row].descricao
+            case salaPv:
+                return salas[row].nome
+            case turnoPv:
+                return turnos[row].descricao
+            case diaPv:
+                return dias[row].descricao
+            default:
+                return nil
         }
-        else{
-            return nil
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var texto = UILabel()
+        if let title = view {
+            texto = title as! UILabel
         }
+        texto.font = UIFont.systemFont(ofSize: 15)
+        texto.textColor = UIColor.black
+        texto.textAlignment = .center
+        
+        //seleciona o data source
+        switch pickerView {
+            case semestrePv:
+                texto.text = semestres[row].descricao
+            case cursoPv:
+                texto.text = cursos[row].nome
+            case periodoPv:
+                texto.text = periodos[row].descricao
+            case salaPv:
+                texto.text = salas[row].nome
+            case turnoPv:
+                texto.text = turnos[row].descricao
+            case diaPv:
+                texto.text = dias[row].descricao
+            default:
+                texto.text = ""
+        }
+        return texto
+        
     }
     
     //metodos de carregamento
@@ -88,14 +146,104 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         aux.id = 0
         aux.descricao = "SEMESTRE - Obrigatório selecionar"
         semestres.append(aux)
-        
         let lista = findSemestre.listar()
         for load in lista
         {
             semestres.append(load)
         }
-        
-        
     }
+    
+    func carregaCurso(){
+        let aux = CursoM()
+        aux.id = 0
+        aux.nome = "CURSO"
+        cursos.append(aux)
+        let lista = findCurso.listar()
+        for load in lista
+        {
+            cursos.append(load)
+        }
+    }
+    
+    func carregaPeriodo(){
+        var aux = PeriodoM()
+        aux.num = -1
+        aux.descricao = "PERÍODO"
+        periodos.append(aux)
+        for load in 0...10
+        {
+            aux = PeriodoM()
+            aux.num = load
+            if load == 0 {
+                aux.descricao = "Regularização/Especial"
+            }
+            else{
+                aux.descricao = "\(load)º Período"
+            }
+            periodos.append(aux)
+        }
+    }
+    
+    func carregaSala(){
+        let aux = SalaM()
+        aux.id = 0
+        aux.nome = "SALA"
+        salas.append(aux)
+        let lista = findSala.listar()
+        for load in lista
+        {
+            salas.append(load)
+        }
+    }
+    
+    func carregaTurno(){
+        var aux = TurnoM()
+        aux.id = 0
+        aux.descricao = "TURNO"
+        turnos.append(aux)
+        aux = TurnoM()
+        aux.id = 9
+        aux.descricao = "Matutino"
+        turnos.append(aux)
+        aux = TurnoM()
+        aux.id = 10
+        aux.descricao = "Vespertino"
+        turnos.append(aux)
+        aux = TurnoM()
+        aux.id = 11
+        aux.descricao = "Noturno"
+        turnos.append(aux)
+    }
+    
+    func carregaDia(){
+        var aux = DiaM()
+        aux.id = 0
+        aux.descricao = "DIA"
+        dias.append(aux)
+        aux = DiaM()
+        aux.id = 13
+        aux.descricao = "Segunda-Feira"
+        dias.append(aux)
+        aux = DiaM()
+        aux.id = 14
+        aux.descricao = "Terça-Feira"
+        dias.append(aux)
+        aux = DiaM()
+        aux.id = 15
+        aux.descricao = "Quarta-Feira"
+        dias.append(aux)
+        aux = DiaM()
+        aux.id = 16
+        aux.descricao = "Quinta-Feira"
+        dias.append(aux)
+        aux = DiaM()
+        aux.id = 17
+        aux.descricao = "Sexta-Feira"
+        dias.append(aux)
+        aux.id = 18
+        aux.descricao = "Sábado"
+        dias.append(aux)
+    }
+
     
 }
