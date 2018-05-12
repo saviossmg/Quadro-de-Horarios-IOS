@@ -231,7 +231,7 @@
                         <barButtonItem key="rightBarButtonItem" title="buscar" image="consulta" id="mIH-Gr-hrS">
                             <connections>
                                 <action selector="consultarHorario:" destination="hxZ-36-4GC" id="iko-fs-AbW"/>
-                                <segue destination="L2o-fZ-qF1" kind="show" id="DW3-ue-adk"/>
+                                <segue destination="L2o-fZ-qF1" kind="show" identifier="carregarofertas" id="DW3-ue-adk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -240,7 +240,7 @@
             </objects>
             <point key="canvasLocation" x="-1918.125" y="-735"/>
         </scene>
-        <!--Horario ConsultaVC-->
+        <!--Consultas - Pesquisa-->
         <scene sceneID="t8U-mj-lxb">
             <objects>
                 <viewController id="L2o-fZ-qF1" customClass="HorarioConsultaVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
@@ -250,6 +250,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CZ5-80-eHi"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Consultas - Pesquisa" id="cSw-vM-KSP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4f-jx-lER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
