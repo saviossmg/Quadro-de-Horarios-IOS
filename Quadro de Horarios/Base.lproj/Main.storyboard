@@ -292,6 +292,14 @@
                     <navigationItem key="navigationItem" title="Consultas - Pesquisa" id="cSw-vM-KSP">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="B7x-km-usq"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cursoPv" destination="E9z-F5-qRh" id="qEX-hP-m5N"/>
+                        <outlet property="diaPv" destination="x5c-Me-vbY" id="fC6-1x-EOn"/>
+                        <outlet property="periodoPv" destination="Sie-SU-wcU" id="SHm-lY-u0e"/>
+                        <outlet property="salaPv" destination="KkX-aS-2nR" id="nGW-rd-tJ5"/>
+                        <outlet property="semestrePv" destination="QnN-X3-jYp" id="IhG-05-5Lz"/>
+                        <outlet property="turnoPv" destination="2Ud-tk-gUl" id="BTe-gD-t3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4f-jx-lER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

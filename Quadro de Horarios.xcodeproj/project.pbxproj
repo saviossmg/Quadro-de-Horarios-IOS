@@ -34,6 +34,8 @@
 		77D3CF20208FFC1100EFBBD5 /* CursoM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D3CF1F208FFC1100EFBBD5 /* CursoM.swift */; };
 		77E6C8F5209E673200B9CFFC /* UnidadeCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */; };
 		77F13FF5209D47180054F82A /*  ContextoCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F13FF4209D47180054F82A /*  ContextoCD.swift */; };
+		A70A081420A73C1B00E09EA1 /* TurnoM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A081320A73C1B00E09EA1 /* TurnoM.swift */; };
+		A70A081620A73C4A00E09EA1 /* DiaM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A081520A73C4A00E09EA1 /* DiaM.swift */; };
 		A74BFF6D20801A19004806EE /* Conexao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74BFF6C20801A19004806EE /* Conexao.swift */; };
 		A77539682076D81F00B7652D /* NoticiaC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77539672076D81F00B7652D /* NoticiaC.swift */; };
 		A77DB10920869FF500BFC98F /* DadosC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77DB10820869FF500BFC98F /* DadosC.swift */; };
@@ -78,6 +80,8 @@
 		77D3CF1F208FFC1100EFBBD5 /* CursoM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoM.swift; sourceTree = "<group>"; };
 		77E6C8F4209E673200B9CFFC /* UnidadeCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadeCD.swift; sourceTree = "<group>"; };
 		77F13FF4209D47180054F82A /*  ContextoCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ContextoCD.swift"; sourceTree = "<group>"; };
+		A70A081320A73C1B00E09EA1 /* TurnoM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnoM.swift; sourceTree = "<group>"; };
+		A70A081520A73C4A00E09EA1 /* DiaM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaM.swift; sourceTree = "<group>"; };
 		A74BFF6C20801A19004806EE /* Conexao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conexao.swift; sourceTree = "<group>"; };
 		A77539672076D81F00B7652D /* NoticiaC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaC.swift; sourceTree = "<group>"; };
 		A77DB10820869FF500BFC98F /* DadosC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosC.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				77D3CEFC208FF98000EFBBD5 /* SemestreM.swift */,
 				77D3CEFE208FF98000EFBBD5 /* UnidadeM.swift */,
 				77D3CF1F208FFC1100EFBBD5 /* CursoM.swift */,
+				A70A081320A73C1B00E09EA1 /* TurnoM.swift */,
+				A70A081520A73C4A00E09EA1 /* DiaM.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,7 +317,9 @@
 				77E6C8F5209E673200B9CFFC /* UnidadeCD.swift in Sources */,
 				770214582069370600B3C261 /* AbaTBC.swift in Sources */,
 				77D3CF0C208FF98300EFBBD5 /* SalaM.swift in Sources */,
+				A70A081620A73C4A00E09EA1 /* DiaM.swift in Sources */,
 				77D3CF06208FF98300EFBBD5 /* SemestreM.swift in Sources */,
+				A70A081420A73C1B00E09EA1 /* TurnoM.swift in Sources */,
 				A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */,
 				A795461420A50D4900FB6F9C /* OfertaCD.swift in Sources */,
 				77D3CF0E208FF98300EFBBD5 /* SemestreLetivoM.swift in Sources */,
