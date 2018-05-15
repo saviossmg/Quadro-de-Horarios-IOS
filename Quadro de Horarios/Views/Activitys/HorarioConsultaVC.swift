@@ -31,6 +31,9 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     var turnos = [TurnoM]()
     var dias = [DiaM]()
     
+    //indices
+    var indices:[Int] = [0,0,0,0,0,0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //pickerview delegate
@@ -62,14 +65,15 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     //Funcao que irá realizar a busca
     @IBAction func acaoOk(_ sender: UIBarButtonItem) {
         print("olaaaaaar")
+        print("(\(indices[0]))")
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents (in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    //retorna o contador do picker view
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         switch pickerView {
             case semestrePv:
                 return semestres.count
@@ -86,11 +90,10 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             default:
                 return 0
         }
-        
     }
     
+    //retorna a descricao
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         switch pickerView {
             case semestrePv:
                 return semestres[row].descricao
@@ -107,9 +110,9 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             default:
                 return nil
         }
-        
     }
     
+    //altera a formataçao do texto
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var texto = UILabel()
         if let title = view {
@@ -137,7 +140,25 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 texto.text = ""
         }
         return texto
-        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch pickerView {
+            case semestrePv:
+                self.indices[0] = row
+            case cursoPv:
+                self.indices[1] = row
+            case periodoPv:
+                self.indices[2] = row
+            case salaPv:
+                self.indices[3] = row
+            case turnoPv:
+                self.indices[4] = row
+            case diaPv:
+                self.indices[5] = row
+            default:
+                print("h")
+        }
     }
     
     //metodos de carregamento
