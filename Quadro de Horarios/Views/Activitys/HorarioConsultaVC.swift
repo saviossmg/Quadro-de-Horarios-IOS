@@ -34,6 +34,9 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     //indices
     var indices:[Int] = [0,0,0,0,0,0]
     
+    //classe que vai puxar o dado da internet
+    let download = OfertaD()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //pickerview delegate
@@ -64,8 +67,35 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     //Funcao que irá realizar a busca
     @IBAction func acaoOk(_ sender: UIBarButtonItem) {
-        print("olaaaaaar")
-        print("(\(indices[0]))")
+        //o semestre é obrigatorio
+        if indices[0] == 0 {
+            let msg = "Selecione o semestre!"
+            let alert = UIAlertController(title: "Atenção", message: "\(msg)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            let task = download.preparaDownload(
+                    semestre: semestres[indices[0]].id,
+                    curso: cursos[indices[1]].id,
+                    periodo: periodos[indices[2]].num,
+                    sala: salas[indices[3]].id,
+                    turno: turnos[indices[4]].id,
+                    dia: dias[indices[5]].id
+                )
+            var msg = ""
+            if task {
+                msg = "Deu bom"
+            }
+            else{
+                msg = "Deu ruim!"
+            }
+            let alert = UIAlertController(title: "Atenção", message: "\(msg)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     func numberOfComponents (in pickerView: UIPickerView) -> Int {
