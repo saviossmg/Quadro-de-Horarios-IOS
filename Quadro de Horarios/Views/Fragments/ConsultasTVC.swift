@@ -17,9 +17,14 @@ class ConsultasTVC: UITableViewController {
     var vrSemestreLetivos: [SemestreLetivoM] = []
     var vrCursos: [CursoM] = []
     
+    var vrAlocacoes: [AlocacaoSalaM] = []
+    
     //controlador do buscador
-    var dadosC = DadosC()
-        
+    let dadosC = DadosC()
+    
+    //controlador do banco
+    let alocaC = AlocacaoSalaCD()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,15 +55,27 @@ class ConsultasTVC: UITableViewController {
         }
     }
     
+    //Implementacao do metodo chamado para a troca de tela
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if(segue.identifier == "carregarofertas"){
+            segue.destination as! HorarioConsultaVC
+        }
+        else
+        if(segue.identifier == "detalharoferta"){
+            
+        }
+    }*/
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return vrAlocacoes.count
     }
 
     /*

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AlocacaoSala" representedClassName="AlocacaoSala" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="idcurso" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="idoferta" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idsala" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="idsemestre" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="oferta" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Oferta" syncable="YES"/>
         <relationship name="sala" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sala" syncable="YES"/>
@@ -21,7 +21,7 @@
         <relationship name="unidade" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Unidade" syncable="YES"/>
     </entity>
     <entity name="Oferta" representedClassName="Oferta" syncable="YES" codeGenerationType="class">
-        <attribute name="descricaoperiodoletivo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="descricaoperiodoletivo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="diasemana" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="disciplina" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horafinala" optional="YES" attributeType="String" syncable="YES"/>

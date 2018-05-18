@@ -111,11 +111,15 @@ class OfertaD
                         //
                         oferta.idcurso = (json["idcurso"] as! Int32)
                         oferta.nometurma = (json["nometurma"] as! String)
-                        oferta.periodo = (json["periodo"] as! Int32)
+                        let periodo = (json["periodo"] as! Int)
+                        if periodo == 0 {
+                            oferta.periodo = "Refularização/Oferta Especial"
+                        }else{
+                            oferta.periodo = "\(periodo)º Período"
+                        }
                         oferta.professor = (json["professor"] as! String)
                         oferta.turno = (json["turno"] as! String)
                         self.ofertas.append(oferta)
-                        
                     }
                 }
                 
@@ -139,7 +143,22 @@ class OfertaD
     }
     
     func salvaDados() throws {
-    
+        //laço para salvar a info no banco
+        //primeiro vai veirifcar se existe no banco
+        //se nao ele vai salvar, se sim ele pula
+        //primeiro as ofertas e depois as alocacoes
+        for aux in ofertas {
+            let objOferta:OfertaM! = ofertaC.findById(id: aux.id)
+            if objOferta == nil {
+                ofertaC.salvar(obj: aux)
+            }
+        }
+        for aux in alocacoes{
+            let objAloc:AlocacaoSalaM! = alocacaoC.findById(id: aux.id)
+            if objAloc == nil {
+                alocacaoC.salvar(obj: aux)
+            }
+        }
     }
     
     

@@ -90,7 +90,86 @@ class SalaCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //busca um registro pelo ID
-    func findById(){
-        //aqui
+    func findById(id: Int32)->SalaM{
+        sala = SalaM()
+        
+        let listar:NSFetchRequest<Sala> = Sala.fetchRequest()
+        
+        //adiciona a ordem
+        let ordenaById = NSSortDescriptor(key: "id", ascending: true)
+        listar.sortDescriptors = [ordenaById]
+        
+        resultManager = NSFetchedResultsController(fetchRequest: listar, managedObjectContext: ctx.contexto, sectionNameKeyPath: nil, cacheName: nil)
+        resultManager?.delegate = self
+        
+        //result menager faz a consulta
+        do {
+            try resultManager?.performFetch()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        var total = 0
+        //verifica se vem realmente um inteiro
+        if let contador = resultManager?.fetchedObjects?.count {
+            total = contador
+        }
+        //se vierem registros então ele vai fazer preencher o objeto e retornar a lista preenchida
+        if(total > 0){
+            //faz o laço para verificar se objeto está corredo
+            for sal in (resultManager?.fetchedObjects)!{
+                if sal.id == id{
+                    sala.id = id
+                    sala.nome = sal.nome
+                    sala.piso = sal.pios
+                    sala.tipo = sal.tipo
+                    sala.ativo = sala.ativo
+                    //
+                    sala.predio = findPredio.findById(id: sal.idpredio)
+                    sala.idpredio = sal.idpredio
+                }
+            }
+        }
+        //vai verificar se o objeto selecionado está na lsita e retornará ele
+        return sala
+    }
+
+
+ func findByIdCD(id: Int32)->Sala{
+     var auxSalaCD = Sala()
+    
+     let listar:NSFetchRequest<Sala> = Sala.fetchRequest()
+     //adiciona a ordem
+     let ordenaById = NSSortDescriptor(key: "id", ascending: true)
+     listar.sortDescriptors = [ordenaById]
+    
+     resultManager = NSFetchedResultsController(fetchRequest: listar, managedObjectContext: ctx.contexto, sectionNameKeyPath: nil, cacheName: nil)
+     resultManager?.delegate = self
+    
+     //result menager faz a consulta
+     do {
+        try resultManager?.performFetch()
+     } catch {
+        print(error.localizedDescription)
+     }
+    
+     var total = 0
+     //verifica se vem realmente um inteiro
+     if let contador = resultManager?.fetchedObjects?.count {
+        total = contador
+     }
+    
+     //se vierem registros então ele vai fazer preencher o objeto e retornar a lista preenchida
+     if(total > 0){
+        //faz o laço para verificar se objeto está corredo
+        for sal in (resultManager?.fetchedObjects)!{
+            if sal.id == id{
+                auxSalaCD = sal
+            }
+        }
+     }
+     //vai verificar se o objeto selecionado está na lsita e retornará ele
+    
+     return auxSalaCD
     }
 }

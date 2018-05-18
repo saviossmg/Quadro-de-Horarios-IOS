@@ -76,24 +76,29 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         }
         else
         {
-            let task = download.preparaDownload(
-                    semestre: semestres[indices[0]].id,
-                    curso: cursos[indices[1]].id,
-                    periodo: periodos[indices[2]].num,
-                    sala: salas[indices[3]].id,
-                    turno: turnos[indices[4]].id,
-                    dia: dias[indices[5]].id
-                )
+            let seme = semestres[indices[0]].id
+            let cur = cursos[indices[1]].id
+            let per = periodos[indices[2]].num
+            let sal = salas[indices[3]].id
+            let tur = turnos[indices[4]].id
+            let dia = dias[indices[4]].id
+            let task = download.preparaDownload(semestre: seme!,curso: cur!,periodo: per!,sala: sal!,turno: tur!,dia: dia!)
             var msg = ""
             if task {
-                msg = "Deu bom"
+                msg = "Consulta realizada com sucesso!\nLista Alterada de acordo com os parâmetros"
+                //armazena os parametros da consulta
+                StoreManager.gravaPreferencias(semestre: seme!, curso: cur!, periodo: per!, sala: sal!, turno: tur!, dia: dia!)
             }
             else{
-                msg = "Deu ruim!"
+                msg = "Falha no processo!"
             }
             let alert = UIAlertController(title: "Atenção", message: "\(msg)", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            
+            
+            
+            navigationController?.popViewController(animated: true)
         }
         
     }

@@ -49,6 +49,7 @@
 		A7ACDB8620781D6E007D13BD /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ACDB8520781D6E007D13BD /* Datas.swift */; };
 		A7FCD90620750C4500B039BD /* NoticiaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90520750C4500B039BD /* NoticiaTVC.swift */; };
 		A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */; };
+		FF7F24F720AE5D5700D246C8 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F24F620AE5D5700D246C8 /* StoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		A7ACDB8520781D6E007D13BD /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		A7FCD90520750C4500B039BD /* NoticiaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTVC.swift; sourceTree = "<group>"; };
 		A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoTVC.swift; sourceTree = "<group>"; };
+		FF7F24F620AE5D5700D246C8 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				A716399020A4ECAB00B98FB5 /* Tasks */,
 				A74BFF6C20801A19004806EE /* Conexao.swift */,
 				A7ACDB8520781D6E007D13BD /* Datas.swift */,
+				FF7F24F620AE5D5700D246C8 /* StoreManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				A74BFF6D20801A19004806EE /* Conexao.swift in Sources */,
 				7709B2ED2072E1EE00DAAAC4 /* SairVC.swift in Sources */,
 				7709B2F42074069600DAAAC4 /* HorarioConsultaVC.swift in Sources */,
+				FF7F24F720AE5D5700D246C8 /* StoreManager.swift in Sources */,
 				A795461620A50DBE00FB6F9C /* AlocacaoSalaCD.swift in Sources */,
 				77D3CF0A208FF98300EFBBD5 /* PeriodoM.swift in Sources */,
 			);

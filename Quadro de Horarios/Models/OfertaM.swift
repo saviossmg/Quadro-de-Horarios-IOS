@@ -14,7 +14,7 @@ class OfertaM
     var nometurma:String!
     var curso:CursoM!
     var diasemana:String!
-    var periodo:Int32!
+    var periodo:String!
     var disciplina:String!
     var descricaoperiodoletivo:String!
     var horainiciala:String!
