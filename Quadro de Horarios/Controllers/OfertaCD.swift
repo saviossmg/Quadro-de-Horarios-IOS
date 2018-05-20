@@ -82,7 +82,6 @@ class OfertaCD: NSObject, NSFetchedResultsControllerDelegate
         //
         aux.idcurso = obj.idcurso
         aux.curso = findCurso.findByIdCD(id: obj.idcurso)
-        print("Curso da Oferta: \(aux.curso)")
         do {
             try ctx.contexto.save()
         } catch {
@@ -142,7 +141,7 @@ class OfertaCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     func findByIdCD(id: Int32)->Oferta{
-        var auxOfertaCD = Oferta()
+        var auxOfertaCD = Oferta(context: ctx.contexto)
         let listar:NSFetchRequest<Oferta> = Oferta.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)

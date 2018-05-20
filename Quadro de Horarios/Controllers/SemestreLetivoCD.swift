@@ -126,7 +126,7 @@ class SemestreLetivoCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     func findByIdCD(id: Int32)->SemestreLetivo{
-        var auxSemetreLetCD = SemestreLetivo()
+        var auxSemetreLetCD = SemestreLetivo(context: ctx.contexto)
         let listar:NSFetchRequest<SemestreLetivo> = SemestreLetivo.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)

@@ -23,6 +23,8 @@ class AlocacaoSalaCD: NSObject, NSFetchedResultsControllerDelegate
     let findSala = SalaCD()
     let findOferta = OfertaCD()
     
+    let findCurso = CursoCD()
+    
     func listar()->[AlocacaoSalaM]{
         //zera a lista
         alocacoes = []
@@ -54,6 +56,7 @@ class AlocacaoSalaCD: NSObject, NSFetchedResultsControllerDelegate
                 aux.idsemestre = aloc.idsemestre
                 //objetos
                 aux.oferta = findOferta.findById(id: aloc.idoferta)
+                aux.oferta.curso = findCurso.findById(id: aux.oferta.idcurso)
                 aux.sala = findSala.findById(id: aloc.idsala)
                 aux.semestre = findSemestre.findById(id: aloc.idsemestre)
                 alocacoes.append(aux)

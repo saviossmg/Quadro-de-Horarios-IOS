@@ -99,11 +99,10 @@ class ConsultasTVC: UITableViewController {
         let celula = tableView.dequeueReusableCell(withIdentifier: "alocacaocel") as! AlocacaoTVC
         celula.dia.text = vrAlocacoes[indexPath.row].oferta.diasemana
         celula.disciplina.text = vrAlocacoes[indexPath.row].oferta.disciplina
-        print("Linha \(indexPath.row)")
-        print("\(vrAlocacoes[indexPath.row].oferta.curso)")
-        print("\(vrAlocacoes[indexPath.row].oferta.periodo)")
-        //celula.curso.text = vrAlocacoes[indexPath.row].oferta.curso.nome
-        celula.sala.text = vrAlocacoes[indexPath.row].sala.nome
+        let curso = vrAlocacoes[indexPath.row].oferta.curso.nome!
+        let periodo = vrAlocacoes[indexPath.row].oferta.periodo!
+        celula.curso.text = "\(curso) - \(String(describing: periodo))"
+        celula.sala.text = ("\(vrAlocacoes[indexPath.row].sala.nome!) - \(vrAlocacoes[indexPath.row].sala.predio.nome!)")
         return celula
     }
 

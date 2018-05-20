@@ -127,7 +127,7 @@ class UnidadeCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     func findByIdCD(id: Int32)->Unidade{
-        var auxUnidadeCD = Unidade()
+        var auxUnidadeCD = Unidade(context: ctx.contexto)
         let listar:NSFetchRequest<Unidade> = Unidade.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)

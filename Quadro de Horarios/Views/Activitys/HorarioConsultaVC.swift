@@ -63,6 +63,10 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         carregaTurno()
         carregaDia()
         
+        print("\(semestres.count)")
+        print("\(cursos.count)")
+        print("\(salas.count)")
+        
     }
     
     //Funcao que irá realizar a busca
@@ -209,6 +213,7 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     
     //metodos de carregamento
     func carregaSemestre(){
+        semestres.removeAll()
         let aux = SemestreM()
         aux.id = 0
         aux.descricao = "SEMESTRE - Obrigatório selecionar"
@@ -216,11 +221,15 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let lista = findSemestre.listar()
         for load in lista
         {
-            semestres.append(load)
+            if load.descricao != nil {
+                semestres.append(load)
+            }
+            
         }
     }
     
     func carregaCurso(){
+        cursos.removeAll()
         let aux = CursoM()
         aux.id = 0
         aux.nome = "CURSO"
@@ -228,7 +237,10 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let lista = findCurso.listar()
         for load in lista
         {
-            cursos.append(load)
+            if load.nome != nil {
+                cursos.append(load)
+            }
+            
         }
     }
     
@@ -252,6 +264,7 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
     }
     
     func carregaSala(){
+        salas.removeAll()
         let aux = SalaM()
         aux.id = 0
         aux.nome = "SALA"
@@ -259,7 +272,10 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         let lista = findSala.listar()
         for load in lista
         {
-            salas.append(load)
+            if(load.nome != nil){
+                salas.append(load)
+            }
+            
         }
     }
     

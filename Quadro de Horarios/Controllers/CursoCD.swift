@@ -126,7 +126,7 @@ class CursoCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     func findByIdCD(id: Int32)->Curso{
-        var auxCursoCD = Curso()
+        var auxCursoCD = Curso(context: ctx.contexto)
         let listar:NSFetchRequest<Curso> = Curso.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)

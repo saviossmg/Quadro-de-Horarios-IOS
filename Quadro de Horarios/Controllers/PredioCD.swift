@@ -130,7 +130,7 @@ class PredioCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     func findByIdCD(id: Int32)->Predio{
-        var auxPredioCD = Predio()
+        var auxPredioCD = Predio(context: ctx.contexto)
         let listar:NSFetchRequest<Predio> = Predio.fetchRequest()
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)
