@@ -88,17 +88,28 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
                 msg = "Consulta realizada com sucesso!\nLista Alterada de acordo com os parâmetros"
                 //armazena os parametros da consulta
                 StoreManager.gravaPreferencias(semestre: seme!, curso: cur!, periodo: per!, sala: sal!, turno: tur!, dia: dia!)
+                let alert = UIAlertController(title: "Sucesso", message: "\(msg)", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                    (_)in
+                    self.performSegue(withIdentifier: "unwindToMenu", sender: self)
+                })
+                
+                alert.addAction(OKAction)
+                self.present(alert, animated: true, completion: nil)
+                /*
+                let alert = UIAlertController(title: "Atenção", message: "\(msg)", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "unwindToMenu", sender: self)
+                */
             }
             else{
                 msg = "Falha no processo!"
-            }
-            let alert = UIAlertController(title: "Atenção", message: "\(msg)", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+                let alert = UIAlertController(title: "Atenção", message: "\(msg)", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }            
             
-            
-            
-            navigationController?.popViewController(animated: true)
         }
         
     }

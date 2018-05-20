@@ -113,7 +113,7 @@ class OfertaD
                         oferta.nometurma = (json["nometurma"] as! String)
                         let periodo = (json["periodo"] as! Int)
                         if periodo == 0 {
-                            oferta.periodo = "Refularização/Oferta Especial"
+                            oferta.periodo = "Regularização/Oferta Especial"
                         }else{
                             oferta.periodo = "\(periodo)º Período"
                         }
@@ -148,17 +148,18 @@ class OfertaD
         //se nao ele vai salvar, se sim ele pula
         //primeiro as ofertas e depois as alocacoes
         for aux in ofertas {
-            let objOferta:OfertaM! = ofertaC.findById(id: aux.id)
-            if objOferta == nil {
+            let objOferta = ofertaC.findById(id: aux.id)
+            if objOferta.id == nil {
                 ofertaC.salvar(obj: aux)
             }
         }
         for aux in alocacoes{
-            let objAloc:AlocacaoSalaM! = alocacaoC.findById(id: aux.id)
-            if objAloc == nil {
+            let objAloc = alocacaoC.findById(id: aux.id)
+            if objAloc.id == nil {
                 alocacaoC.salvar(obj: aux)
             }
         }
+        
     }
     
     

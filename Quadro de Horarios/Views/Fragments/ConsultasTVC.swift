@@ -27,11 +27,21 @@ class ConsultasTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        vrAlocacoes = alocaC.listar()
+        //recarrega a lista caso tenham elementos
+        tableView.reloadData()
     }
     
-    //Consulta horarios com base em parametros
-    @IBAction func consultarHorario(_ sender: UIBarButtonItem) {
+    override func viewDidAppear(_ animated: Bool) {
+        //verifica se os dados estão vazios
+        let existe = dadosC.verificaDados()        
+        //carrega tudo se não tiver nada
+        if(!existe){
+            let ret = dadosC.buscarDados(sincronia: false)
+            let alert = UIAlertController(title: "", message: "\(ret)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     //recarrega a lista de acordo com os dados do banco
@@ -42,30 +52,32 @@ class ConsultasTVC: UITableViewController {
     @IBAction func sincronizarDados(_ sender: UIBarButtonItem) {
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        //verifica se os dados estão vazios
-        let existe = dadosC.verificaDados()
+    func carregaAlocacaos(){
         
-        //carrega tudo se não tiver nada
-        if(!existe){
-            let ret = dadosC.buscarDados(sincronia: false)
-            let alert = UIAlertController(title: "", message: "\(ret)", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
     }
     
     //Implementacao do metodo chamado para a troca de tela
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+   {
         if(segue.identifier == "carregarofertas"){
             segue.destination as! HorarioConsultaVC
         }
         else
         if(segue.identifier == "detalharoferta"){
+            if let indexPath = tableView.indexPathForSelectedRow
+            {
+                let telaOferta =  segue.destination as! HorarioDetalhesVC
+                telaOferta.disciplina = vrAlocacoes[indexPath.row].oferta.disciplina
+                /*
+                telaOferta.
+                telaNoticia.txtAutor = vrNoticia[indexPath.row].autor
+                telaNoticia.txtCriada = vrNoticia[indexPath.row].dataCriacao
+                telaNoticia.txtTexto = vrNoticia[indexPath.row].texto
+                */
+            }
             
         }
-    }*/
+    }
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,16 +89,23 @@ class ConsultasTVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return vrAlocacoes.count
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 97
     }
-    */
+
+    //celulas
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celula = tableView.dequeueReusableCell(withIdentifier: "alocacaocel") as! AlocacaoTVC
+        celula.dia.text = vrAlocacoes[indexPath.row].oferta.diasemana
+        celula.disciplina.text = vrAlocacoes[indexPath.row].oferta.disciplina
+        print("Linha \(indexPath.row)")
+        print("\(vrAlocacoes[indexPath.row].oferta.curso)")
+        print("\(vrAlocacoes[indexPath.row].oferta.periodo)")
+        //celula.curso.text = vrAlocacoes[indexPath.row].oferta.curso.nome
+        celula.sala.text = vrAlocacoes[indexPath.row].sala.nome
+        return celula
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -132,5 +151,21 @@ class ConsultasTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
+        vrAlocacoes = alocaC.listar()
+        tableView.reloadData()
+        //Trata os retornos dessa tela
+        /*
+        if let fonte = segue.source as? HorarioConsultaVC {
+            var msg = "Lista atualizada de acordo com os parâmetross selecionados!"
+            let alert = UIAlertController(title: "Sucesso", message: "\(msg)", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)           
+            
+        }
+        */
+        
+    }
 
 }

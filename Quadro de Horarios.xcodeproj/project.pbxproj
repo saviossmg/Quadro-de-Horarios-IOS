@@ -15,7 +15,6 @@
 		7709B2ED2072E1EE00DAAAC4 /* SairVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */; };
 		7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */; };
 		7709B2F42074069600DAAAC4 /* HorarioConsultaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */; };
-		7709B2F6207406D400DAAAC4 /* HorarioDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709B2F5207406D400DAAAC4 /* HorarioDetalhesVC.swift */; };
 		774775521F58CDF90005A257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774775511F58CDF90005A257 /* AppDelegate.swift */; };
 		774775571F58CDF90005A257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 774775551F58CDF90005A257 /* Main.storyboard */; };
 		7747755A1F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 774775581F58CDF90005A257 /* Quadro_de_Horarios.xcdatamodeld */; };
@@ -50,6 +49,7 @@
 		A7FCD90620750C4500B039BD /* NoticiaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90520750C4500B039BD /* NoticiaTVC.swift */; };
 		A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */; };
 		FF7F24F720AE5D5700D246C8 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F24F620AE5D5700D246C8 /* StoreManager.swift */; };
+		FFEB81D020B0932C006DDE15 /* HorarioDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB81CF20B0932C006DDE15 /* HorarioDetalhesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +61,6 @@
 		7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SairVC.swift; sourceTree = "<group>"; };
 		7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaDetalhesVC.swift; sourceTree = "<group>"; };
 		7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioConsultaVC.swift; sourceTree = "<group>"; };
-		7709B2F5207406D400DAAAC4 /* HorarioDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioDetalhesVC.swift; sourceTree = "<group>"; };
 		7747754E1F58CDF90005A257 /* Quadro de Horarios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quadro de Horarios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		774775511F58CDF90005A257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		774775561F58CDF90005A257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		A7FCD90520750C4500B039BD /* NoticiaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTVC.swift; sourceTree = "<group>"; };
 		A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoTVC.swift; sourceTree = "<group>"; };
 		FF7F24F620AE5D5700D246C8 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		FFEB81CF20B0932C006DDE15 /* HorarioDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioDetalhesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +217,7 @@
 			children = (
 				7709B2F12074052900DAAAC4 /* NoticiaDetalhesVC.swift */,
 				7709B2F32074069600DAAAC4 /* HorarioConsultaVC.swift */,
-				7709B2F5207406D400DAAAC4 /* HorarioDetalhesVC.swift */,
+				FFEB81CF20B0932C006DDE15 /* HorarioDetalhesVC.swift */,
 			);
 			path = Activitys;
 			sourceTree = "<group>";
@@ -324,6 +324,7 @@
 				770214582069370600B3C261 /* AbaTBC.swift in Sources */,
 				77D3CF0C208FF98300EFBBD5 /* SalaM.swift in Sources */,
 				A70A081620A73C4A00E09EA1 /* DiaM.swift in Sources */,
+				FFEB81D020B0932C006DDE15 /* HorarioDetalhesVC.swift in Sources */,
 				77D3CF06208FF98300EFBBD5 /* SemestreM.swift in Sources */,
 				A70A081420A73C1B00E09EA1 /* TurnoM.swift in Sources */,
 				A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */,
@@ -332,7 +333,6 @@
 				770214542069269F00B3C261 /* NoticiasTVC.swift in Sources */,
 				774775521F58CDF90005A257 /* AppDelegate.swift in Sources */,
 				7709B2F22074052900DAAAC4 /* NoticiaDetalhesVC.swift in Sources */,
-				7709B2F6207406D400DAAAC4 /* HorarioDetalhesVC.swift in Sources */,
 				A795461020A50D0C00FB6F9C /* SemestreLetivoCD.swift in Sources */,
 				77D3CF05208FF98300EFBBD5 /* PredioM.swift in Sources */,
 				A74600B420AA59E1002B8D1A /* OfertaD.swift in Sources */,
