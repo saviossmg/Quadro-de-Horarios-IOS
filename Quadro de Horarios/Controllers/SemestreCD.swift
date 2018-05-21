@@ -71,8 +71,14 @@ class SemestreCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //atualiza um registro
-    func atualizar(){
-        //aqui
+    func atualizar(obj: SemestreM){
+        let aux = findByIdCD(id: obj.id)
+        aux.descricao = obj.descricao
+        do {
+            try ctx.contexto.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //busca um registro pelo ID

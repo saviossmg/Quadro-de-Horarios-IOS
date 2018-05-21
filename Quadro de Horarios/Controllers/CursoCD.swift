@@ -81,8 +81,18 @@ class CursoCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //atualiza um registro
-    func atualizar(){
-        //aqui
+    func atualizar(obj: CursoM){
+        let aux = findByIdCD(id: obj.id)
+        aux.nome = obj.nome
+        aux.codcurso = obj.codCurso
+        //seta o objeto
+        aux.idunidade = obj.idunidade
+        aux.unidade = findUnidade.findByIdCD(id: obj.idunidade)
+        do {
+            try ctx.contexto.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //busca um registro pelo ID

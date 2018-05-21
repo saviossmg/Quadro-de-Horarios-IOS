@@ -80,8 +80,18 @@ class SemestreLetivoCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //atualiza um registro
-    func atualizar(){
-        //aqui
+    func atualizar(obj: SemestreLetivoM){
+        let aux = findByIdCD(id: obj.id)
+        aux.idcurso = obj.idcurso
+        aux.idsemestre = obj.idsemestre
+        //objetos relacionados
+        aux.curso = findCurso.findByIdCD(id: obj.idcurso)
+        aux.semestre = findSemestre.findByIdCD(id: obj.idsemestre)
+        do {
+            try ctx.contexto.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //busca um registro pelo ID

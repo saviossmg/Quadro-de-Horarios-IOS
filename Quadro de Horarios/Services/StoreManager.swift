@@ -35,5 +35,6 @@ class StoreManager
         let dia = Int32(defaults.integer(forKey: "dia"))
         return (semestre, curso, periodo,sala, turno, dia)
     }
+    
 }
 

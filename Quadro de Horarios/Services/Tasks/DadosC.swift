@@ -18,6 +18,7 @@ class DadosC
     var semestres = [SemestreM]()
     var semestresLetivos = [SemestreLetivoM]()
     var cursos = [CursoM]()
+    var ofertas = [OfertaM]()
     var alocacoes = [AlocacaoSalaM]()
    
     //chave
@@ -30,6 +31,8 @@ class DadosC
     let semestreC = SemestreCD()
     let cursoC = CursoCD()
     let semestreLetivoC = SemestreLetivoCD()
+    let ofertaC = OfertaCD()
+    let alocacaoC = AlocacaoSalaCD()
     
     //lista de endereços
     let enderecos = [
@@ -78,34 +81,54 @@ class DadosC
             for uni in vrUnidades{
                 unidadeC.salvar(obj: uni)
             }
-            
             for pre in vrPredios{
                 predioC.salvar(obj: pre)
             }
-            
             for sal in vrSalas{
                 salaC.salvar(obj: sal)
             }
-            
             for sem in vrSemestres{
                 semestreC.salvar(obj: sem)
             }
-            
             for cur in vrCursos{
                 cursoC.salvar(obj: cur)
             }
-            
             for semlet in vrSemestreletivo{
                 semestreLetivoC.salvar(obj: semlet)
             }
-            
-            mensagem = "mensagem de dados baixados"
+            mensagem = "Dados baixados com sucesso!"
         }
         else{
             //atualização aqui
             //atualiza tambem as ofertas e as alocações
+            buscarOfertas()
+            for uni in vrUnidades{
+                unidadeC.atualizar(obj: uni)
+            }
+            for pre in vrPredios{
+                predioC.atualizar(obj: pre)
+            }
+            for sal in vrSalas{
+                salaC.atualizar(obj: sal)
+            }
+            for sem in vrSemestres{
+                semestreC.atualizar(obj: sem)
+            }
+            for cur in vrCursos{
+                cursoC.atualizar(obj: cur)
+            }
+            for semlet in vrSemestreletivo{
+                semestreLetivoC.atualizar(obj: semlet)
+            }
+            //ofertas
+            for ofe in ofertas{
+                ofertaC.atualizar(obj: ofe)
+            }
+            for aloc in alocacoes {
+                alocacaoC.atualizar(obj: aloc)
+            }
             
-            mensagem = "mensagem de dados sincronizados"
+            mensagem = "Dados sincronizados com sucesso!"
         }
         return mensagem
     }
@@ -335,6 +358,87 @@ class DadosC
         while !terminou{}
         //retorna no final
         return cursos
+    }
+    
+    //busca os cursos
+    func buscarOfertas()
+    {
+        //lista todas as alocacoes (e consequentemente as ofertas) já existentes
+        let alocacoesAnteriores = alocacaoC.listar()
+        let url = URL(string: enderecos[6])!
+        self.alocacoes.removeAll()
+        self.ofertas.removeAll()
+        for aloc in alocacoesAnteriores {
+            var terminou = false
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            let postData = "hash=\(chave.chave)&idalocacao=\(aloc.id)".data(using: .utf8)
+            request.httpBody = postData
+            // execute the datatask and validate the result
+            let session = URLSession.shared
+            let task = session.dataTask(with: request) {
+                (data, response, error) in
+                if error == nil, let userObject = (try? JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any] ) {
+                    //For getting customer_id try like this
+                    if let dataOfer = userObject!["ofer"] as? [[String: Any]] {
+                        for jsonDict in dataOfer {
+                            let json = jsonDict as NSDictionary
+                            let oferta = OfertaM()
+                            oferta.id = (json["id"] as! Int32)
+                            oferta.descricaoperiodoletivo = (json["descricaoperiodoletivo"] as! String)
+                            oferta.diasemana = (json["diasemana"] as! String)
+                            oferta.disciplina = (json["disciplina"] as! String)
+                            //esses horarios podem vir nulos
+                            if(json["horainiciala"] is NSNull){ oferta.horainiciala = "" }
+                            else{ oferta.horainiciala = (json["horainiciala"] as! String)}
+                            //
+                            if(json["horainicialb"] is NSNull){ oferta.horainicialb = "" }
+                            else{ oferta.horainicialb = (json["horainicialb"] as! String)}
+                            //
+                            if(json["intervaloinicio"] is NSNull){ oferta.intervaloinicio = "" }
+                            else{ oferta.intervaloinicio = (json["intervaloinicio"] as! String)}
+                            //
+                            if(json["intervalofim"] is NSNull){ oferta.intervalofim = "" }
+                            else{ oferta.intervalofim = (json["intervalofim"] as! String)}
+                            //
+                            if(json["horafinala"] is NSNull){ oferta.horafinala = "" }
+                            else{ oferta.horafinala = (json["horafinala"] as! String)}
+                            //
+                            if(json["horafinalb"] is NSNull){ oferta.horafinalb = "" }
+                            else{ oferta.horafinalb = (json["horafinalb"] as! String)}
+                            //
+                            oferta.idcurso = (json["idcurso"] as! Int32)
+                            oferta.nometurma = (json["nometurma"] as! String)
+                            let periodo = (json["periodo"] as! Int)
+                            if periodo == 0 {
+                                oferta.periodo = "Regularização/Oferta Especial"
+                            }else{
+                                oferta.periodo = "\(periodo)º Período"
+                            }
+                            oferta.professor = (json["professor"] as! String)
+                            oferta.turno = (json["turno"] as! String)
+                            self.ofertas.append(oferta)
+                        }
+                    }
+                    
+                    if let datAloc = userObject!["aloc"] as? [[String: Any]] {
+                        for jsonDict in datAloc {
+                            let json = jsonDict as NSDictionary
+                            let alocacao = AlocacaoSalaM()
+                            alocacao.id = (json["id"] as! Int32)
+                            alocacao.idoferta = (json["idoferta"] as! Int32)
+                            alocacao.idsala = (json["idsala"] as! Int32)
+                            alocacao.idsemestre = (json["idsemestre"] as! Int32)
+                            self.alocacoes.append(alocacao)
+                            
+                        }
+                    }
+                }
+                terminou = true
+            }
+            task.resume()
+            while(!terminou){}
+        }
     }
     
 }

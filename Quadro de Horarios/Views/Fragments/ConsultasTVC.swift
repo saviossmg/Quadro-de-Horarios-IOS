@@ -27,9 +27,13 @@ class ConsultasTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vrAlocacoes = alocaC.listar()
-        //recarrega a lista caso tenham elementos
-        tableView.reloadData()
+        let aux = alocaC.listar()
+        if(aux.count > 0){
+            vrAlocacoes = alocaC.listarParaterizado()
+            //recarrega a lista caso tenham elementos
+            tableView.reloadData()
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,13 +50,23 @@ class ConsultasTVC: UITableViewController {
     
     //recarrega a lista de acordo com os dados do banco
     @IBAction func recarregarLista(_ sender: UIBarButtonItem) {
+        vrAlocacoes = alocaC.listarParaterizado()
+        tableView.reloadData()
+        var msg = "Lista RECARREGADA!"
+        let alert = UIAlertController(title: "Sucesso", message: "\(msg)", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     //sincroniza os dados existentes com o web service
     @IBAction func sincronizarDados(_ sender: UIBarButtonItem) {
-    }
-    
-    func carregaAlocacaos(){
+        dadosC.buscarDados(sincronia: true)
+        vrAlocacoes = alocaC.listarParaterizado()
+        tableView.reloadData()
+        var msg = "Dados sincronizados!"
+        let alert = UIAlertController(title: "Sucesso", message: "\(msg)", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -66,14 +80,29 @@ class ConsultasTVC: UITableViewController {
         if(segue.identifier == "detalharoferta"){
             if let indexPath = tableView.indexPathForSelectedRow
             {
-                let telaOferta =  segue.destination as! HorarioDetalhesVC
-                telaOferta.disciplina = vrAlocacoes[indexPath.row].oferta.disciplina
-                /*
-                telaOferta.
-                telaNoticia.txtAutor = vrNoticia[indexPath.row].autor
-                telaNoticia.txtCriada = vrNoticia[indexPath.row].dataCriacao
-                telaNoticia.txtTexto = vrNoticia[indexPath.row].texto
-                */
+                let telaOferta =  segue.destination as! HorarioDetalhesVC                
+                telaOferta.disciplina = vrAlocacoes[indexPath.row].oferta.disciplina!
+                telaOferta.curso = vrAlocacoes[indexPath.row].oferta.curso.nome!
+                telaOferta.dia = vrAlocacoes[indexPath.row].oferta.diasemana!
+                telaOferta.horario1 = "\(vrAlocacoes[indexPath.row].oferta.horainiciala!) às \(vrAlocacoes[indexPath.row].oferta.horafinala!)"
+                //
+                if vrAlocacoes[indexPath.row].oferta.intervaloinicio != nil {
+                    telaOferta.intervalo = "\(vrAlocacoes[indexPath.row].oferta.intervaloinicio!) às \(vrAlocacoes[indexPath.row].oferta.intervalofim!)"
+                }
+                else{
+                    telaOferta.intervalo = "Sem intervalo."
+                }
+                //
+                if vrAlocacoes[indexPath.row].oferta.horainicialb != nil {
+                    telaOferta.horario2 = "\(vrAlocacoes[indexPath.row].oferta.horainicialb!) às \(vrAlocacoes[indexPath.row].oferta.horafinalb!)"
+                }
+                else{
+                    telaOferta.horario2 = "Sem 2º horário."
+                }
+                telaOferta.local = "\(vrAlocacoes[indexPath.row].sala.nome!) - \(vrAlocacoes[indexPath.row].sala.predio.nome!)"
+                telaOferta.periodo = vrAlocacoes[indexPath.row].oferta.periodo!
+                telaOferta.turno = vrAlocacoes[indexPath.row].oferta.turno!
+                telaOferta.semestreletivo = vrAlocacoes[indexPath.row].semestre.semestre.descricao!
             }
             
         }
@@ -99,9 +128,7 @@ class ConsultasTVC: UITableViewController {
         let celula = tableView.dequeueReusableCell(withIdentifier: "alocacaocel") as! AlocacaoTVC
         celula.dia.text = vrAlocacoes[indexPath.row].oferta.diasemana
         celula.disciplina.text = vrAlocacoes[indexPath.row].oferta.disciplina
-        let curso = vrAlocacoes[indexPath.row].oferta.curso.nome!
-        let periodo = vrAlocacoes[indexPath.row].oferta.periodo!
-        celula.curso.text = "\(curso) - \(String(describing: periodo))"
+        celula.curso.text = "\(vrAlocacoes[indexPath.row].oferta.curso.nome!) - \(vrAlocacoes[indexPath.row].oferta.periodo!)"
         celula.sala.text = ("\(vrAlocacoes[indexPath.row].sala.nome!) - \(vrAlocacoes[indexPath.row].sala.predio.nome!)")
         return celula
     }
@@ -152,19 +179,8 @@ class ConsultasTVC: UITableViewController {
     */
     
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
-        vrAlocacoes = alocaC.listar()
+        vrAlocacoes = alocaC.listarParaterizado()
         tableView.reloadData()
-        //Trata os retornos dessa tela
-        /*
-        if let fonte = segue.source as? HorarioConsultaVC {
-            var msg = "Lista atualizada de acordo com os parâmetross selecionados!"
-            let alert = UIAlertController(title: "Sucesso", message: "\(msg)", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)           
-            
-        }
-        */
-        
     }
 
 }

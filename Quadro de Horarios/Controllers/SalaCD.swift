@@ -85,23 +85,32 @@ class SalaCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //atualiza um registro
-    func atualizar(){
-        //aqui
+    func atualizar(obj: SalaM){
+        let aux = findByIdCD(id: obj.id)
+        aux.id = obj.id
+        aux.nome = obj.nome
+        aux.pios = obj.piso
+        aux.tipo = obj.tipo
+        aux.ativo = obj.ativo
+        //referencia a outros objetos
+        aux.idpredio = obj.idpredio
+        aux.predio = findPredio.findByIdCD(id: obj.idpredio)
+        do {
+            try ctx.contexto.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //busca um registro pelo ID
     func findById(id: Int32)->SalaM{
         sala = SalaM()
-        
         let listar:NSFetchRequest<Sala> = Sala.fetchRequest()
-        
         //adiciona a ordem
         let ordenaById = NSSortDescriptor(key: "id", ascending: true)
         listar.sortDescriptors = [ordenaById]
-        
         resultManager = NSFetchedResultsController(fetchRequest: listar, managedObjectContext: ctx.contexto, sectionNameKeyPath: nil, cacheName: nil)
-        resultManager?.delegate = self
-        
+        resultManager?.delegate = self        
         //result menager faz a consulta
         do {
             try resultManager?.performFetch()

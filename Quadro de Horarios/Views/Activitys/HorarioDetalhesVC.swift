@@ -10,16 +10,16 @@ import UIKit
 
 class HorarioDetalhesVC: UIViewController {
 
-    @IBOutlet var vrDisciplina: UILabel!
-    @IBOutlet var vrSemestreletivo: UILabel!
-    @IBOutlet var vrCurso: UILabel!
-    @IBOutlet var vrPeriodo: UILabel!
-    @IBOutlet var vrDia: UILabel!
-    @IBOutlet var vrTurno: UILabel!
-    @IBOutlet var vrHorario1: UILabel!
-    @IBOutlet var vrIntervalo: UILabel!
-    @IBOutlet var vrHorario2: UILabel!
-    @IBOutlet var vrLocal: UILabel!
+    @IBOutlet var lbDisciplina: UILabel!
+    @IBOutlet var lbSemestreletivo: UILabel!
+    @IBOutlet var lbCurso: UILabel!
+    @IBOutlet var lbPeriodo: UILabel!
+    @IBOutlet var lbDia: UILabel!
+    @IBOutlet var lbTurno: UILabel!
+    @IBOutlet var lbHorario1: UILabel!
+    @IBOutlet var lbIntervalo: UILabel!
+    @IBOutlet var lbHorario2: UILabel!
+    @IBOutlet var lbLocal: UILabel!
     
     //Variavies da classe (stored properties)
     var disciplina:String!
@@ -36,22 +36,16 @@ class HorarioDetalhesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //seta os textos
-        vrDisciplina.text = disciplina
-        vrSemestreletivo.text = semestreletivo
-        vrCurso.text = curso
-        vrPeriodo.text = periodo
-        vrDia.text = dia
-        vrTurno.text = turno
-        vrHorario1.text = horario1
-        vrIntervalo.text = intervalo
-        vrHorario2.text = horario2
-        vrLocal.text = local
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        lbDisciplina.text = disciplina
+        lbSemestreletivo.text = semestreletivo
+        lbCurso.text = curso
+        lbPeriodo.text = periodo
+        lbDia.text = dia
+        lbTurno.text = turno
+        lbHorario1.text = horario1
+        lbIntervalo.text = intervalo
+        lbHorario2.text = horario2
+        lbLocal.text = local
+    }    
 
 }

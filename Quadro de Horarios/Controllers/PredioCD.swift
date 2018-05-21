@@ -83,8 +83,19 @@ class PredioCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //atualiza um registro
-    func atualizar(){
-        //aqui
+    func atualizar(obj: PredioM){
+        let aux = findByIdCD(id: obj.id)
+        aux.nome = obj.nome
+        aux.idunidade = obj.idunidade
+        aux.pisos = obj.pisos
+        aux.ativo = obj.ativo
+        //seta o objeto
+        aux.unidade = findUnidade.findByIdCD(id: obj.idunidade)
+        do{
+            try ctx.contexto.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //busca um registro pelo ID

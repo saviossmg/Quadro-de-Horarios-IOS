@@ -90,7 +90,28 @@ class OfertaCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     func atualizar(obj: OfertaM){
-        
+        let aux = findByIdCD(id: obj.id)
+        aux.descricaoperiodoletivo = obj.descricaoperiodoletivo
+        aux.diasemana = obj.diasemana
+        aux.disciplina = obj.disciplina
+        aux.horainiciala = obj.horainiciala
+        aux.horainicialb = obj.horainicialb
+        aux.intervaloinicio = obj.intervaloinicio
+        aux.intervalofim = obj.intervalofim
+        aux.horafinala = obj.horafinala
+        aux.horafinalb = obj.horainicialb
+        aux.nometurma = obj.nometurma
+        aux.periodo = obj.periodo
+        aux.professor = obj.professor
+        aux.turno = obj.turno
+        //
+        aux.idcurso = obj.idcurso
+        aux.curso = findCurso.findByIdCD(id: obj.idcurso)
+        do {
+            try ctx.contexto.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //busca um registro pelo ID

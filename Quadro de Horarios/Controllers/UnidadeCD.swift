@@ -81,8 +81,18 @@ class UnidadeCD: NSObject, NSFetchedResultsControllerDelegate
     }
     
     //atualiza um registro
-    func atualizar(){
-        //aqui
+    func atualizar(obj: UnidadeM){
+        let aux = findByIdCD(id: obj.id)
+        aux.nome = obj.nome
+        aux.endereco = obj.endereco
+        aux.cep = obj.cep
+        aux.latitude = obj.latitude
+        aux.longitude = obj.longitude
+        do{
+            try ctx.contexto.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     //busca um registro pelo ID

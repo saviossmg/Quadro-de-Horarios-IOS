@@ -62,11 +62,6 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         carregaSala()
         carregaTurno()
         carregaDia()
-        
-        print("\(semestres.count)")
-        print("\(cursos.count)")
-        print("\(salas.count)")
-        
     }
     
     //Funcao que irá realizar a busca
@@ -224,7 +219,6 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             if load.descricao != nil {
                 semestres.append(load)
             }
-            
         }
     }
     
@@ -275,7 +269,6 @@ class HorarioConsultaVC: UIViewController, UIPickerViewDelegate, UIPickerViewDat
             if(load.nome != nil){
                 salas.append(load)
             }
-            
         }
     }
     
