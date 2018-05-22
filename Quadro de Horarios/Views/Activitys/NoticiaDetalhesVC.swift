@@ -34,7 +34,13 @@ class NoticiaDetalhesVC: UIViewController, UIWebViewDelegate {
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if let url = request.url, navigationType == UIWebViewNavigationType.linkClicked {
-            UIApplication.shared.openURL(url)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+            else
+            {
+                UIApplication.shared.openURL(url)
+            }
             return false
         }
         return true

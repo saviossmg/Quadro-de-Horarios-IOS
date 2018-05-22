@@ -64,6 +64,7 @@ class LocalizarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         {
             UIApplication.shared.openURL(url)
         }
+        
         /*
         //let sourceLocation = CLLocationCoordinate2D(latitude: localAtual.latitude, longitude: localAtual.longitude)
         let sourceLocation = CLLocationCoordinate2D(latitude: -10.243971, longitude: -48.327583)
