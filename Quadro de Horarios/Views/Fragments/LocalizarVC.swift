@@ -47,14 +47,24 @@ class LocalizarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        endereco.selectedRow(inComponent: 0)
+        print("Indice: \(indice)")
+        endereco.selectedRow(inComponent: indice)
     }
     
-    //Função que irá gerar
+    //Função que irá gerar a rota
     @IBAction func gerarRota(_ sender: Any) {
         let unidade = unidades[indice]
-        mapa.removeAnnotation(annotation)
-        
+        //monta a url com as coordenadas de destino e ponto de saida
+        let url = URL(string: "http://maps.apple.com/?saddr=\(unidade.latitude!),\(unidade.longitude!)&daddr=\(Float(localAtual.latitude)),\(Float(localAtual.longitude))&dirflg=d")!
+    
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        else
+        {
+            UIApplication.shared.openURL(url)
+        }
+        /*
         //let sourceLocation = CLLocationCoordinate2D(latitude: localAtual.latitude, longitude: localAtual.longitude)
         let sourceLocation = CLLocationCoordinate2D(latitude: -10.243971, longitude: -48.327583)
         let destinationLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(unidade.latitude!), longitude: CLLocationDegrees(unidade.longitude!))
@@ -106,15 +116,17 @@ class LocalizarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             let rect = route.polyline.boundingMapRect
             self.mapa.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
         }
+ */
+ 
     }
     
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    /*func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.blue
         renderer.lineWidth = 6
         
         return renderer
-    }
+    }*/
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for localatual in locations {

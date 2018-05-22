@@ -22,6 +22,9 @@ class OfertaD
     let ofertaC =  OfertaCD()
     let alocacaoC = AlocacaoSalaCD()
     
+    //verificador vazio
+    var vazio = true
+    
     //lista de endereços
     let endereco = "https://alocacaosalas.unitins.br/getAlocacao.php"
     
@@ -59,6 +62,9 @@ class OfertaD
             terminou = true
         } catch  {
             print("EXCECAO: \(error)")
+        }
+        if(ofertas.count > 0 && alocacoes.count > 0){
+            vazio = false
         }
         return terminou
     }

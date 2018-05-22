@@ -601,7 +601,7 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="gerarRota:" destination="2Np-An-4kW" eventType="touchUpInside" id="gVJ-NT-omz"/>
+                                    <action selector="gerarRota:" destination="2Np-An-4kW" eventType="touchUpInside" id="kQm-fc-thT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -610,14 +610,14 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
                     </view>
                     <tabBarItem key="tabBarItem" title="Localizar" image="localizar" id="J2O-eE-aoo"/>
                     <connections>
-                        <outlet property="btnGerarrota" destination="eYW-3I-XnO" id="ANf-Em-phn"/>
+                        <outlet property="btnGerarrota" destination="eYW-3I-XnO" id="bn4-I5-hSQ"/>
                         <outlet property="endereco" destination="qFs-1I-6zY" id="6uY-15-of2"/>
                         <outlet property="mapa" destination="Jfc-rX-4yV" id="VvP-a9-hKk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nR0-k9-GYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3879.375" y="-1525"/>
+            <point key="canvasLocation" x="-4849" y="-735"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kew-ei-NQ6">

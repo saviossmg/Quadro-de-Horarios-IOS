@@ -50,7 +50,7 @@ class ConsultasTVC: UITableViewController {
     
     //recarrega a lista de acordo com os dados do banco
     @IBAction func recarregarLista(_ sender: UIBarButtonItem) {
-        vrAlocacoes = alocaC.listarParaterizado()
+        vrAlocacoes = alocaC.listar()
         tableView.reloadData()
         var msg = "Lista RECARREGADA!"
         let alert = UIAlertController(title: "Sucesso", message: "\(msg)", preferredStyle: .actionSheet)
