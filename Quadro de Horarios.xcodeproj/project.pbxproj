@@ -49,6 +49,7 @@
 		A7FCD90620750C4500B039BD /* NoticiaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90520750C4500B039BD /* NoticiaTVC.swift */; };
 		A7FCD90820750C6900B039BD /* AlocacaoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */; };
 		FF7F24F720AE5D5700D246C8 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7F24F620AE5D5700D246C8 /* StoreManager.swift */; };
+		FFBBE1A420B396BA003CBFF0 /* LocalizarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBBE1A320B396BA003CBFF0 /* LocalizarVC.swift */; };
 		FFEB81D020B0932C006DDE15 /* HorarioDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB81CF20B0932C006DDE15 /* HorarioDetalhesVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		A7FCD90520750C4500B039BD /* NoticiaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTVC.swift; sourceTree = "<group>"; };
 		A7FCD90720750C6900B039BD /* AlocacaoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlocacaoTVC.swift; sourceTree = "<group>"; };
 		FF7F24F620AE5D5700D246C8 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		FFBBE1A320B396BA003CBFF0 /* LocalizarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizarVC.swift; sourceTree = "<group>"; };
 		FFEB81CF20B0932C006DDE15 /* HorarioDetalhesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioDetalhesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 				7709B2EC2072E1EE00DAAAC4 /* SairVC.swift */,
 				770214532069269F00B3C261 /* NoticiasTVC.swift */,
 				770214552069286F00B3C261 /* ConsultasTVC.swift */,
+				FFBBE1A320B396BA003CBFF0 /* LocalizarVC.swift */,
 			);
 			path = Fragments;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				A795460C20A50C4300FB6F9C /* SalaCD.swift in Sources */,
 				77D3CF20208FFC1100EFBBD5 /* CursoM.swift in Sources */,
 				A795461220A50D3800FB6F9C /* CursoCD.swift in Sources */,
+				FFBBE1A420B396BA003CBFF0 /* LocalizarVC.swift in Sources */,
 				77F13FF5209D47180054F82A /*  ContextoCD.swift in Sources */,
 				77D3CF0B208FF98300EFBBD5 /* NoticiaM.swift in Sources */,
 				A77DB10920869FF500BFC98F /* DadosC.swift in Sources */,

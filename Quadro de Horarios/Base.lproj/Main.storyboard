@@ -579,7 +579,7 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
         <!--Localizar-->
         <scene sceneID="0pE-NU-FZd">
             <objects>
-                <viewController id="2Np-An-4kW" sceneMemberID="viewController">
+                <viewController id="2Np-An-4kW" customClass="LocalizarVC" customModule="Quadro_de_Horarios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tru-kJ-Lt2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -592,16 +592,6 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
                                 <rect key="frame" x="16" y="78" width="288" height="292"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-a6-jfo">
-                                <rect key="frame" x="16" y="378" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="zoomind"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRW-Rb-PcN">
-                                <rect key="frame" x="264" y="378" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="zoomoutd"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYW-3I-XnO">
                                 <rect key="frame" x="96" y="382" width="128" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -610,12 +600,20 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
                                 <state key="normal" title="Gerar Rota">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="gerarRota:" destination="2Np-An-4kW" eventType="touchUpInside" id="gVJ-NT-omz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="uSp-6i-PkC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Localizar" image="localizar" id="J2O-eE-aoo"/>
+                    <connections>
+                        <outlet property="btnGerarrota" destination="eYW-3I-XnO" id="ANf-Em-phn"/>
+                        <outlet property="endereco" destination="qFs-1I-6zY" id="6uY-15-of2"/>
+                        <outlet property="mapa" destination="Jfc-rX-4yV" id="VvP-a9-hKk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nR0-k9-GYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -653,7 +651,5 @@ Desenvolvido por Sávio Martins, Estudante de Sistemas de Informação pela Univ
         <image name="recarregar" width="30" height="30"/>
         <image name="sair" width="30" height="30"/>
         <image name="sincronizar" width="30" height="30"/>
-        <image name="zoomind" width="64" height="64"/>
-        <image name="zoomoutd" width="64" height="64"/>
     </resources>
 </document>
