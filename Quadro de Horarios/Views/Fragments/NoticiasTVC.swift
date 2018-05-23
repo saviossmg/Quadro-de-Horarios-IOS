@@ -16,37 +16,54 @@ class NoticiasTVC: UITableViewController {
     var noticiaC = NoticiaC()
     var primeira = false
     var p = 0
-    //progresso
-    var indicadorCarregamento:UIActivityIndicatorView = UIActivityIndicatorView()
-    
+
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if(vrNoticia.isEmpty){
-            carregaNoticia()
-            tableView.reloadData()
+            let c = checaConexao()
+            if c {
+                carregaNoticia()
+            }
         }
     }
     
-    func carregaNoticia()->Void{
-        //indicadorCarregamento.center = self.view.center
-        //indicadorCarregamento.hidesWhenStopped = true
-        //indicadorCarregamento.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        //view.addSubview(indicadorCarregamento)
-        //indicadorCarregamento.startAnimating()
-        if(vrNoticia.isEmpty){
-            vrNoticia = noticiaC.buscaDados(ofset: ofset)
+    func checaConexao()->Bool{
+        var conectado = false
+        var parou = false
+        Conexao.isInternetAvailable(webSiteToPing: nil) { (isInternetAvailable) in
+            guard isInternetAvailable else {
+                // Inform user for example
+                let msg = "Falha de conexão.\nVerifique a conexão de seu aparelho."
+                let alert = UIAlertController(title: "Atenção", message: "\(msg)", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                parou = true
+                return
+            }
+            // Do some action if there is Internet
+            conectado = true
+            parou = true
+            return
+        }
+        while !parou{}
+        return conectado
+    }
+    
+    func carregaNoticia(){
+        if(self.vrNoticia.isEmpty){
+            self.vrNoticia = self.noticiaC.buscaDados(ofset: self.ofset)
             self.ofset += 1
         }
         else{
-            let noticia = noticiaC.buscaDados(ofset: ofset)
-            vrNoticia.append(contentsOf: noticia)
+            let noticia = self.noticiaC.buscaDados(ofset: self.ofset)
+            self.vrNoticia.append(contentsOf: noticia)
             self.ofset += 1
         }
-        //indicadorCarregamento.stopAnimating()
-        //UIApplication.shared.endIgnoringInteractionEvents()
+        self.tableView.reloadData()
+        
     }
     
     //Implementacao do metodo chamado para a troca de tela
@@ -100,8 +117,10 @@ class NoticiasTVC: UITableViewController {
         let contentYoffset = scrollView.contentOffset.y
         var distanceFromBottom = scrollView.contentSize.height - contentYoffset
         if (distanceFromBottom < height ) {
+            let c = checaConexao()
+            if c {
                 carregaNoticia()
-                self.tableView.reloadData()
+            }
         }
     }
     

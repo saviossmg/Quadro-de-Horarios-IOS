@@ -47,8 +47,11 @@ class LocalizarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("Indice: \(indice)")
         endereco.selectedRow(inComponent: indice)
+        if unidades.count == 1{
+            carregaUnidades()
+            endereco.reloadAllComponents()
+        }
     }
     
     //Função que irá gerar a rota
@@ -64,70 +67,8 @@ class LocalizarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         {
             UIApplication.shared.openURL(url)
         }
-        
-        /*
-        //let sourceLocation = CLLocationCoordinate2D(latitude: localAtual.latitude, longitude: localAtual.longitude)
-        let sourceLocation = CLLocationCoordinate2D(latitude: -10.243971, longitude: -48.327583)
-        let destinationLocation = CLLocationCoordinate2D(latitude: CLLocationDegrees(unidade.latitude!), longitude: CLLocationDegrees(unidade.longitude!))
-        
-        let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
-        let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
-        
-        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
-        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
-        
-        let sourceAnnotation = MKPointAnnotation()
-        sourceAnnotation.title = "Meu local atual"
-        
-        if let location = sourcePlacemark.location {
-            sourceAnnotation.coordinate = location.coordinate
-        }
-        
-        let destinationAnnotation = MKPointAnnotation()
-        destinationAnnotation.title = unidade.nome
-        
-        if let location = destinationPlacemark.location {
-            destinationAnnotation.coordinate = location.coordinate
-        }
-        
-        self.mapa.showAnnotations([sourceAnnotation,destinationAnnotation], animated: true )
-   
-        let directionRequest = MKDirectionsRequest()
-        directionRequest.source = sourceMapItem
-        directionRequest.destination = destinationMapItem
-        directionRequest.transportType = .automobile
-        
-        // Calculate the direction
-        let directions = MKDirections(request: directionRequest)
-        
-        directions.calculate {
-            (response, error) -> Void in
-            
-            guard let response = response else {
-                if let error = error {
-                    print("Error: \(error)")
-                }
-                
-                return
-            }
-            
-            let route = response.routes[0]
-            self.mapa.add((route.polyline), level: MKOverlayLevel.aboveRoads)
-            
-            let rect = route.polyline.boundingMapRect
-            self.mapa.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
-        }
- */
  
     }
-    
-    /*func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = UIColor.blue
-        renderer.lineWidth = 6
-        
-        return renderer
-    }*/
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for localatual in locations {
@@ -186,6 +127,7 @@ class LocalizarVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func carregaUnidades(){
+        unidades.removeAll()
         let aux = UnidadeM()
         aux.id = 0
         aux.nome = "Selecione aqui o CÂMPUS."
